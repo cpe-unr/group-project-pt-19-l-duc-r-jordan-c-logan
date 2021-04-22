@@ -1,6 +1,7 @@
 /** @file */
 #include <iostream>
-
+#include "print.h"
+#include "processor.h"
 /**
  * \brief   The function bar.
  *
@@ -27,5 +28,9 @@ void fn(){
 
 int main() {
     std::cout << "Hello, World!" << std::endl;
+
+    //Print::modifyPrinter();
+    //Print::processingPrinter();
+    //Print::csvFilePrinter();	
     return 0;
 }
