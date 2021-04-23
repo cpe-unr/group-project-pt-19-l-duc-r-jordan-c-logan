@@ -3,6 +3,7 @@
 Echo::Echo(int newDelay): delay(newDelay){};
 
 void Echo::processBuffer(unsigned char* buffer, int bufferSize){
+	
 	float adj_n;
 	float adj_delayed_n;
 	float finalEcho;

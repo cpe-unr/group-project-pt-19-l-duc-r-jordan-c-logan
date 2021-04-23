@@ -20,4 +20,4 @@ print.o: print.cpp print.h
 	g++ -c -std=c++11 print.cpp
 
 clean:
-	rm demo *.o
+	rm demo *.o *.h.gch
