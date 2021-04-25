@@ -1,6 +1,11 @@
 # CS 202 Semester Project Template - PT 19 Project Outline
 
 Wav:
+Functions:
+	readFile() - read in wav file data
+	writeFile() - modify wav file data
+	getters for 8 and 16 bit buffers and bufferSize
+	destructor to delete buffer from heap
 
 	1. Similar to PA4, make Processor Abstract class (aka interface).
 	2. Normalization inherits to processor and implements virtual method in own class for normalizing audio
@@ -9,13 +14,19 @@ Wav:
 	*this class also helps file io with reading in wav files*
 	
 File IO:
-
+Functions:
+	makeCSVFile()
+	
 	1. read funtion(s) using templates for different read in type methods
 	2. overwrite metadata function if UI alerts to and save this change in the file
 	3. Probably have separate funtions in class to create and export CSV file with info that got read in at start of program
 
 
 User Interaction/ printing:
+Functions:
+	modifyPrinter() - user interaction for modifying metadata
+	processingPrinter() - user interaction for processing wav files
+	csvFilePrinter() - user interaction for making a CSV file
 
 	1. First prompt is triggered after all the files are read in
 		- prompts user if they want to modify the metadata of any file 
@@ -128,4 +139,3 @@ typedef struct  WAV_HEADER{
     unsigned long       Subchunk2Size;  // Sampled data length    
 
 }wav_hdr;
-
