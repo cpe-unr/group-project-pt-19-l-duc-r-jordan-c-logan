@@ -9,7 +9,7 @@ class NoiseGate : public Processor{
 
 public:
 	NoiseGate(int newUpperThreshold, int newLowerThreshold);
-	virtual void processBuffer(unsigned char* buffer, int bufferSize) override;
+	void processBuffer(unsigned char* buffer, int bufferSize) override;
 
 	//Need to change this to templatized also!
 };

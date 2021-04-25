@@ -16,3 +16,4 @@ void Echo::processBuffer(unsigned char* buffer, int bufferSize){
 		buffer[i + delay] = (unsigned char)(round(finalEcho));
 	}
 }
+

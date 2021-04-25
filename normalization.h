@@ -8,7 +8,7 @@ class Normalization : public Processor{
 public:
 
 	void processBuffer(unsigned char* buffer, int bufferSize) override;
-	//make this into a template
+
 };
 
 #endif
