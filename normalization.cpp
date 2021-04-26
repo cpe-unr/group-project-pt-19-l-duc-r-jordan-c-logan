@@ -16,6 +16,6 @@ void Normalization::processBuffer(unsigned char* buffer, int bufferSize){
 	//Adjust the buffers appropriately
 	for (int j = 0; j < bufferSize; j++)
 	{
-		buffer[i] = ((256*.8)/(averageBuffer))*buffer[i]; 
+		buffer[j] = ((256*.8)/(averageBuffer))*buffer[j]; 
 	}
 }

@@ -1,6 +1,7 @@
 //CS 202 Semester Project - PT 19
 
 #include "print.h"
+#include "fileIO.h"
 
 void Print::modifyPrinter(){
 	int input1;
@@ -63,8 +64,12 @@ void Print::csvFilePrinter(){
 	std::cout << "Do you want a CSV file created containing all the files technical and metadata information? 1:yes 0:no" << std::endl;
 	std::cin >> input4;
 	if(input4 == 1){
-		std::cout << "Writing CSV file!" << std::endl;
-		//create CSV file with all the files info
+		std::string filename;
+
+		std::cout << "Enter a filename for the CSV file: ";
+		std::cin >> filename;
+		//FileIO csv(filename);
+		//creates CSV file with all the files info
 	}
 }
 
