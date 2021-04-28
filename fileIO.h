@@ -4,6 +4,8 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include "waveHeader.h"
+#include "wav.h"
 #include "print.h"
 
 class FileIO{

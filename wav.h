@@ -8,22 +8,46 @@
 #include <fstream>
 #include "waveHeader.h"
 
+template<typename T>
 class Wav{
-	unsigned char* buffer = NULL;
+	T* buffer = NULL;
 	wav_header waveHeader;
 
 public:
-	void readFile(const std::string &fileName);
-        void writeFile(const std::string &outFileName);
+	void readFile(const std::string &fileName){
+		std::ifstream file(fileName,std::ios::binary | std::ios::in);    
+		if(file.is_open()){ 
+			file.read((char*)&waveHeader, sizeof(wav_header));
+			buffer = new T[waveHeader.data_bytes]; 
+			file.read((char*)buffer, waveHeader.data_bytes);       
+			file.close();
+		}
+		T* shortBuffer = reinterpret_cast<T*>(buffer);
+	}
 
-	//const getter for unsigned 8 bit buffer
-	unsigned char* getBuffer() const;
-	//const getter for short 16 bit buffer
-	short getbuffer() const;
+        void writeFile(const std::string &outFileName){
+		std::ofstream outFile(outFileName, std::ios::out | std::ios::binary);
+		outFile.write((char*)&waveHeader,sizeof(wav_header));
+		outFile.write((char*)buffer, waveHeader.data_bytes);
+		outFile.close();
+	}
+
+	//const getter for type T buffer
+	T* getBuffer(){
+		return buffer;
+	}
+
 	//const getter for buffer size integer
-	int getBufferSize() const;
+	int getBufferSize() const{
+		return waveHeader.data_bytes;
+	}
 
-	virtual ~Wav();
+	//destructor - deletes buffer from heap
+	virtual ~Wav(){
+		if(buffer != NULL){
+			delete[] buffer;
+		}
+	}
 };
 
 #endif

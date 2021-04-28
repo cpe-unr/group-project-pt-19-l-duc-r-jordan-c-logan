@@ -6,8 +6,14 @@ FileIO::FileIO(std::string file){
 
 void FileIO::writeCsvFile(std::string file){
 
-	//std::ofstream dataFile(file);
+	std::ofstream dataFile(file);
 	
-	//dataFile << "Sample Rate" << std::endl; - example how to make column title
-	//dataFile.close();
+	//Columns showing what data layout is
+	dataFile << "Filename, Chunk Size, Num Channels, Sample Rate, MetaData " << std::endl;
+
+	//for(int i = 0; i < bufferSize; i++){
+		//dataFile << file << "," << fmt_chunk_size << "," << num_channels << "," << sample_rate << "," << METADATA << std::endl;
+		
+	//}	
+	dataFile.close();
 }
