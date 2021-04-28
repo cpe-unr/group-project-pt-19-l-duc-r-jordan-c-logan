@@ -1,7 +1,6 @@
 //CS 202 Semester Project - PT 19
 
 #include "print.h"
-#include "fileIO.h"
 
 void Print::modifyPrinter(){
 	int input1;
@@ -68,7 +67,7 @@ void Print::csvFilePrinter(){
 
 		std::cout << "Enter a filename for the CSV file: ";
 		std::cin >> filename;
-		//FileIO csv(filename);
+		FileIO* csv = new FileIO(filename);
 		//creates CSV file with all the files info
 	}
 }

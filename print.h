@@ -9,9 +9,9 @@
 
 class Print{
 public:
-	static void modifyPrinter();
-	static void processingPrinter();
-	static void csvFilePrinter();
+	void modifyPrinter();
+	void processingPrinter();
+	void csvFilePrinter();
 };
 
 #endif

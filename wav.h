@@ -15,12 +15,15 @@ class Wav{
 public:
 	void readFile(const std::string &fileName);
         void writeFile(const std::string &outFileName);
-	virtual ~Wav();
 
 	//const getter for unsigned 8 bit buffer
+	unsigned char* getBuffer() const;
 	//const getter for short 16 bit buffer
-
+	short getbuffer() const;
+	//const getter for buffer size integer
 	int getBufferSize() const;
+
+	virtual ~Wav();
 };
 
 #endif
