@@ -5,6 +5,7 @@
 
 #include <iostream>
 #include <string>
+#include "wav.h"
 #include "fileIO.h"
 
 class Print{

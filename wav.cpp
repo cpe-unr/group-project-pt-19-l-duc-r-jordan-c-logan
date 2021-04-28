@@ -24,6 +24,7 @@ void Wav::writeFile(const std::string &outFileName){
 
 }
 
+/*
 unsigned char* getBuffer() const{
 	return buffer;
 }
@@ -31,6 +32,7 @@ unsigned char* getBuffer() const{
 short getBuffer() const{
 	return buffer;
 }
+*/
 
 int Wav::getBufferSize() const {
 	//getter for buffer size

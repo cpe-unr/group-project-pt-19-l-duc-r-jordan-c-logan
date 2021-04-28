@@ -67,7 +67,7 @@ void Print::csvFilePrinter(){
 
 		std::cout << "Enter a filename for the CSV file: ";
 		std::cin >> filename;
-		FileIO* csv = new FileIO(filename);
+		//FileIO* csv = new FileIO(filename);
 		//creates CSV file with all the files info
 	}
 }
