@@ -1,6 +1,5 @@
 #include "wav.h"
 
-/*
 void Wav::readFile(const std::string &fileName){
 	//reads in files & creates buffer to store data
 
@@ -11,8 +10,10 @@ void Wav::readFile(const std::string &fileName){
 		file.read((char*)buffer, waveHeader.data_bytes);       
 		file.close();
 	}
-	short* shortBuffer = reinterpret_cast<short*>(buffer);
 
+	//if(bit_depth == 16){
+	//	short* shortBuffer = reinterpret_cast<short*>(buffer);
+	//}
 }
         
 void Wav::writeFile(const std::string &outFileName){
@@ -26,16 +27,16 @@ void Wav::writeFile(const std::string &outFileName){
 }
 
 
-unsigned char* getBuffer() const{
+unsigned char* Wav::getBuffer(){
 	return buffer;
 }
-
-short getBuffer() const{
+/*
+short* Wav::getBuffer(){
 	return buffer;
 }
+*/
 
-
-int Wav::getBufferSize() const {
+int Wav::getBufferSize() const{
 	//getter for buffer size
 	return waveHeader.data_bytes;
 }
@@ -46,4 +47,4 @@ Wav::~Wav(){
 		delete[] buffer;
 	}
 }
-*/
+
