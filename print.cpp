@@ -28,7 +28,7 @@ void Print::processingPrinter(){
 	std::cin >> input2;
 
 	if(input2 != 0){
-		std::cout << "Please enter a valid filename to store processsed audio: ";
+		std::cout << "Please enter a valid filename to store processsed audio (Ex. filename.wav): ";
 		std::cin >> input3;
 		
 		Wav wav;
@@ -40,22 +40,21 @@ void Print::processingPrinter(){
  
 			Processor *normalizer = new Normalization();
 			normalizer->processBuffer(wav.getBuffer(),wav.getBufferSize());
-			//wav.writeFile(input3); 
-			//NEED TO FIGURE OUT HOW TO FORMAT SO ITS A .WAV FILE W/STRING
+			wav.writeFile(input3); 
 		}
 		else if(input2 == 2){
 			std::cout << "NoiseGate Processing" << std::endl; 
 	
 			Processor *noise = new NoiseGate(140, 116);
 			noise->processBuffer(wav.getBuffer(),wav.getBufferSize());
-			//wav.writeFile(input3.wav);
+			wav.writeFile(input3);
 		}
 		else{
 			std::cout << "Echo Processing" << std::endl; 
 			
 			Processor *echo = new Echo(10000);
 			echo->processBuffer(wav.getBuffer(),wav.getBufferSize());	
-			//wav.writeFile(input3.wav);
+			wav.writeFile(input3);
 		}
 	
 	}
@@ -69,7 +68,7 @@ void Print::csvFilePrinter(){
 	if(input4 == 1){
 		std::string filename;
 
-		std::cout << "Enter a filename for the CSV file: ";
+		std::cout << "Enter a filename for the CSV file (Ex. filname.csv): ";
 		std::cin >> filename;
 		//FileIO* csv = new FileIO(filename);
 	}
