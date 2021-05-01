@@ -16,8 +16,8 @@ echo.o: echo.cpp echo.h
 noiseGate.o: noiseGate.cpp noiseGate.h
 	g++ -c -std=c++11 noiseGate.cpp
 
-print.o: print.cpp print.h fileIO.h 
-	g++ -c -std=c++11 print.cpp fileIO.h
+print.o: print.cpp print.h processor.h fileIO.h 
+	g++ -c -std=c++11 print.cpp processor.h fileIO.h
 
 fileIO.o: fileIO.cpp fileIO.h 
 	g++ -c -std=c++11 fileIO.cpp

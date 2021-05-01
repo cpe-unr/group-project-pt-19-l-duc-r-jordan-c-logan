@@ -30,30 +30,34 @@ void Print::processingPrinter(){
 	if(input2 != 0){
 		std::cout << "Please enter a valid filename to store processsed audio: ";
 		std::cin >> input3;
-		//if(input3.is_open()){
-			//New file created with processed audio//
-		//}
+		
+		Wav wav;
+		//TESTING LINE
+		wav.readFile("yes-8bit-mono.wav");		
 
 		if(input2 == 1){
-			std::cout << "Normalization Processing" << std::endl; 
-			//Processor *normalizer = new normalizer();
-			//normalizer->processBuffer(wav.getBuffer(),wav.getBufferSize());
-			//wav.writeFile("limit.wav");
+			std::cout << "Normalization Processing" << std::endl;
+ 
+			Processor *normalizer = new Normalization();
+			normalizer->processBuffer(wav.getBuffer(),wav.getBufferSize());
+			//wav.writeFile(input3); 
+			//NEED TO FIGURE OUT HOW TO FORMAT SO ITS A .WAV FILE W/STRING
 		}
 		else if(input2 == 2){
 			std::cout << "NoiseGate Processing" << std::endl; 
-
-			//Processor *noise = new NoiseGate(140, 116);
-			//noise->processBuffer(wav.getBuffer(),wav.getBufferSize());
-			//wav.writeFile("noise.wav");
+	
+			Processor *noise = new NoiseGate(140, 116);
+			noise->processBuffer(wav.getBuffer(),wav.getBufferSize());
+			//wav.writeFile(input3.wav);
 		}
 		else{
 			std::cout << "Echo Processing" << std::endl; 
 			
-			//Processor *processor = new Echo(10000);
-			//processor->processBuffer(wav.getBuffer(),wav.getBufferSize());
-			//wav.writeFile("echos.wav");
+			Processor *echo = new Echo(10000);
+			echo->processBuffer(wav.getBuffer(),wav.getBufferSize());	
+			//wav.writeFile(input3.wav);
 		}
+	
 	}
 }
 	
@@ -68,7 +72,7 @@ void Print::csvFilePrinter(){
 		std::cout << "Enter a filename for the CSV file: ";
 		std::cin >> filename;
 		//FileIO* csv = new FileIO(filename);
-		//creates CSV file with all the files info
 	}
+	//creates CSV file with all the files info
 }
 

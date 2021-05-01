@@ -6,6 +6,10 @@
 #include <iostream>
 #include <string>
 #include "wav.h"
+#include "processor.h"
+#include "normalization.h"
+#include "noiseGate.h"
+#include "echo.h"
 #include "fileIO.h"
 
 class Print{

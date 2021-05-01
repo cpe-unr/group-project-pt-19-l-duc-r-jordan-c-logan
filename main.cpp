@@ -1,5 +1,8 @@
 /** @file */
 #include <iostream>
+#include "wav.h"
+#include "waveHeader.h"
+#include "fileIO.h"
 #include "print.h"
 #include "processor.h"
 /**
@@ -27,11 +30,13 @@ void fn(){
 }
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+	//Need to have for loop going through and reading each file!!!
+	
+        //UNCOMMENT THESE WHEN READY
 
-//UNCOMMENT THESE WHEN READY
-    //Print::modifyPrinter();
-    //Print::processingPrinter();
-    //Print::csvFilePrinter();	
-    return 0;
+        Print p;
+	//p.modifyPrinter();
+	//p.processingPrinter();
+        //eap.csvFilePrinter();	
+        return 0;
 }
