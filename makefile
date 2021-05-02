@@ -19,8 +19,8 @@ noiseGate.o: noiseGate.cpp noiseGate.h
 print.o: print.cpp print.h processor.h fileIO.h 
 	g++ -c -std=c++11 print.cpp processor.h fileIO.h
 
-fileIO.o: fileIO.cpp fileIO.h 
-	g++ -c -std=c++11 fileIO.cpp
+fileIO.o: fileIO.cpp fileIO.h waveHeader.h
+	g++ -c -std=c++11 fileIO.cpp waveHeader.h
 
 clean:
 	rm demo *.o *.h.gch
