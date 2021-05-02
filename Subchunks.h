@@ -1,14 +1,14 @@
 //CS 202 Semester Project - PT 19
 
-#ifndef LIST_H
-#define LIST_H
+#ifndef SUBCHUNKS_H
+#define SUBCHUNKS_H
 
 
-typedef struct list {
+typedef struct sub_chunk {
     char subChunk[4]; //Sub chunk
     int subChunkSize; //Size
     
     
 } list;
 
-#endif //LIST_H 
+#endif //SUBCHUNKS_H 

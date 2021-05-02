@@ -1,17 +1,17 @@
 //CS 202 Semester Project - PT 19
 
-#ifndef LISTHEADER_H
-#define LISTHEADER_H
+#ifndef METACHUNKS_H
+#define METACHUNKS_H
 #include <vector>
-#include "list.h"
+#include "Subchunks.h"
 
-typedef struct list_header {
+typedef struct meta_header {
     char list[4]; //LIST
     int chunkSize; //Chunk Size
     char info[4]; //INFO
     
-    std::vector<list> subChunks; 
+    std::vector<sub_chunk> subChunks; 
     
-} list_header;
+} meta_header;
 
 #endif //LISTHEADER_H
