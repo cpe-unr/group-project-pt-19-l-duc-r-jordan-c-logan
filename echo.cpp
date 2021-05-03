@@ -2,7 +2,7 @@
 
 Echo::Echo(int newDelay): delay(newDelay){};
 
-void Echo::processBuffer(unsigned char* buffer, int bufferSize){
+void Echo::processBuffer(unsigned char* buffer, int bufferSize, short bitdepth){
 	
 	float adj_n;
 	float adj_delayed_n;
@@ -16,4 +16,3 @@ void Echo::processBuffer(unsigned char* buffer, int bufferSize){
 		buffer[i + delay] = (unsigned char)(round(finalEcho));
 	}
 }
-

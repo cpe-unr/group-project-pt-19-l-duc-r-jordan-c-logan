@@ -94,14 +94,14 @@ int main() {
         // processorLimiter->processBuffer(wav.getBuffer(), wav.getBufferSize());
         // wav.writeFile(limitfile);
 
-        // wav.readFile(testfile);
-        // Processor *processorEcho = new Echo(7500);
-        // processorEcho->processBuffer(wav.getBuffer(), wav.getBufferSize());
-        // wav.writeFile(echofile);
+         //wav.readFile(testfile);
+         //Processor *processorEcho = new Echo(7500);
+         //processorEcho->processBuffer(wav.getBuffer(), wav.getBufferSize(), wav.getBitDepth());
+         //wav.writeFile(echofile);
 
         // wav.readFile(testfile);
         // Processor *processorNoiseGate = new NoiseGate(.7);
-        // processorNoiseGate->processBuffer(wav.getBuffer(), wav.getBufferSize());
+        // processorNoiseGate->processBuffer(wav.getBuffer(), wav.getBufferSize(), wav.getBitDepth());
         // wav.writeFile(noisefile);
 
         Wav wav;
@@ -114,8 +114,6 @@ int main() {
         // Processor *processorLimiter = new Limiter(); 
         // processorLimiter->processBuffer(wav.getBuffer(), wav.getBufferSize());
         // wav.writeFile(limitedfile);
-
-
 
         return 0;
 }

@@ -48,11 +48,6 @@
 // 	}
 // }
 
-/*
- * This class is designed to work with PCM 8-bit mono wavefiles.
- * It makes many assumptions about the format of the wave as a result.
- * It will NOT work with stereo files or any other bit-depth than 8 bits.
- */
 
 #include <string>
 #include <fstream>
@@ -105,14 +100,12 @@ void Wav::writeFile(const std::string &outFileName) {
 }
 
 Wav::~Wav() {
-    if(buffer != NULL)
+    if(buffer != NULL){
         delete[] buffer;
+    }
 }
 
 int Wav::getBufferSize(){
     return waveHeader.data_bytes;
 }
-
-
-
 
