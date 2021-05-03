@@ -5,6 +5,10 @@
 #include <vector>
 #include "Subchunks.h"
 
+    /**
+     * Struct to contain metadata info management
+     */
+
 typedef struct meta_header {
     char list[4]; //LIST
     int chunkSize; //Chunk Size

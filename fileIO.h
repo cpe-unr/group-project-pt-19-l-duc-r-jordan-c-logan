@@ -9,9 +9,17 @@
 
 class FileIO{
 public:
-	//methods to make CSV file should be implemented in this class
+	/**
+	 * FileIO constructor
+	 */
 	FileIO();
 	//void loadFile(std::string file);
+
+	/**
+	 * Writes the CSV file containing all the tech. info and metadata of the wav files
+	 * @param file - name of file, in a string
+	 * @param bufferSize - size of wav files buffer array, in integers
+	 */
 	void writeCsvFile(std::string file, int bufferSize);
 };
 

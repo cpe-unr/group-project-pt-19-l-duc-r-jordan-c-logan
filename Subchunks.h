@@ -3,7 +3,9 @@
 #ifndef SUBCHUNKS_H
 #define SUBCHUNKS_H
 
-
+	/**
+	 * Struct to contain subchunk and subchunk size from audio files
+	 */
 typedef struct sub_chunk {
     char subChunk[4]; //Sub chunk
     int subChunkSize; //Size

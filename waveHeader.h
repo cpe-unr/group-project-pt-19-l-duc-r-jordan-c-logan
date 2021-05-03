@@ -3,7 +3,9 @@
 #ifndef WAVEHEADER_H
 #define WAVEHEADER_H
 
-
+	/**
+	 * Struct containing wav file's technical data variables
+	 */
 typedef struct wav_header {
     // RIFF Header
     char riff_header[4]; // Contains "RIFF"
