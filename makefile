@@ -23,4 +23,4 @@ fileIO.o: fileIO.cpp fileIO.h waveHeader.h
 	g++ -c -std=c++11 fileIO.cpp waveHeader.h
 
 clean:
-	rm demo *.o *.h.gch
+	rm demo *.o *.h.gch *.csv
