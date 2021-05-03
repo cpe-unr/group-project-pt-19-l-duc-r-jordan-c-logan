@@ -25,11 +25,11 @@ class Normalization : public Processor<T>
 			double multiplier;
 			std::cout << "Bit Depth: " << bitdepth << std::endl;
 			T MID;
-			T MAXDISTANCE = (pow(2, bitdepth)/2)-1;
+			T MAXDISTANCE = (pow(2, bitdepth-1));
 			
 			if (bitdepth == 8)
 			{
-				MID = pow(2, bitdepth);
+				MID = 128;
 			}
 
 			if (bitdepth == 16)
@@ -37,8 +37,7 @@ class Normalization : public Processor<T>
 				MID = 0;
 			}
 
-			int test;
-			
+			std::cout << "MID: " << MID << std::endl;
 
 			//Find the maximum buffer
 			for (int i = 0; i < bufferSize; i++)
@@ -46,12 +45,7 @@ class Normalization : public Processor<T>
 				if (abs(buffer[i]-MID) > maxDistance)
 				{
 					maxDistance = abs(buffer[i]-MID);
-					if(maxDistance > 32767)
-					{
-						maxDistance = 32767;
-					}
-
-					std::cout << "Max Distance Progression: " << maxDistance<< std::endl;
+					//std::cout << "Max Distance Progression: " << maxDistance<< std::endl;
 				} 
 			}
 
@@ -68,17 +62,6 @@ class Normalization : public Processor<T>
 			for (int j = 0; j < bufferSize; j++)
 			{
 				buffer[j] = buffer[j] * multiplier; 
-
-				// if (buffer[j] == NULL)
-				// {
-				// 	std::cout << "Somthing's wrong" << std::endl;
-				// }
-
-				// else 
-				// {
-				// 	test = abs(buffer[j]-0);
-				// 	std::cout << "Buffer being written: " << std::endl;
-				// }
 			}
 		}
 	

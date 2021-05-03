@@ -1,5 +1,6 @@
 #ifndef ECHO_H
 #define ECHO_H
+
 #include "processor.h"
 #include <iostream>
 
@@ -9,13 +10,12 @@ class Echo : public Processor<T>
 {
 	public:
 
-        int delay; 
-        Echo(int newDelay): delay(newDelay){}
+                int delay; 
+                Echo(int newDelay): delay(newDelay){}
 
 
 
-<<<<<<< HEAD
-		void processBuffer(T* buffer, int bufferSize, short bitdepth)
+	void processBuffer(T* buffer, int bufferSize, short bitdepth)
         {
             std::cout << delay << std::endl; 
             static const T MID = (pow(2, bitdepth)/2);
@@ -24,18 +24,14 @@ class Echo : public Processor<T>
             float adj_n;
             float adj_delayed_n;
             float finalEcho;
-=======
-        void processBuffer(unsigned char* buffer, int bufferSize, short bitdepth) override;
->>>>>>> e35af725492486ec242c8b475000f049ba3f225e
 
-            for(int i = 0; i < bufferSize - delay; i++){
-                adj_n = (float)(buffer[i] - MID);
-                adj_delayed_n = (float)(buffer[i + delay] - MID);
-                finalEcho = adj_n * echoLevel + adj_delayed_n * scaleFactor + MID;
-                buffer[i + delay] = (T)(round(finalEcho));
-                //std::cout << "Buffer value: " << buffer[i+delay]*1 << std::endl; 
-		    }
+                for(int i = 0; i < bufferSize - delay; i++){
+                        adj_n = (float)(buffer[i] - MID);
+                        adj_delayed_n = (float)(buffer[i + delay] - MID);
+                        finalEcho = adj_n * echoLevel + adj_delayed_n * scaleFactor + MID;
+                        buffer[i + delay] = (T)(round(finalEcho));
+                }
         }
 };
 
-#endif //NOISE_GATE_H
+#endif //ECHO_H
