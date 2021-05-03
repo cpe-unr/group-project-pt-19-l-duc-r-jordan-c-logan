@@ -86,17 +86,10 @@ void Wav::readFile(const std::string &fileName) {
 
 	bitDepth = waveHeader.bit_depth;
 
-	if (waveHeader.bit_depth != 0)
-	{
-		//std::cout << "All good! Bit depth makes sense!" << std::endl; 
-		//std::cout << "Bitdepth is: " << bitDepth << std::endl; 
-	}
-
-	else 
-	{
-		std::cout << "Does not work..." << std::endl; 
-	}
-
+    if (bitDepth == 16)
+    {
+        short* shortBuffer = reinterpret_cast<short*>(buffer);
+    }
 }
 
 unsigned char *Wav::getBuffer(){
@@ -119,7 +112,6 @@ Wav::~Wav() {
 int Wav::getBufferSize(){
     return waveHeader.data_bytes;
 }
-
 
 
 
