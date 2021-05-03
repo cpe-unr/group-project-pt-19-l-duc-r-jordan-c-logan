@@ -1,5 +1,5 @@
-demo: main.cpp wav.o processor.o normalization.o echo.o noiseGate.o fileIO.o print.o 
-	g++ -std=c++11 -o demo main.cpp wav.o processor.o normalization.o echo.o noiseGate.o print.o
+demo: main.cpp wav.o processor.o normalization.o echo.o noiseGate.o print.o fileIO.o  
+	g++ -std=c++11 -o demo main.cpp wav.o processor.o normalization.o echo.o noiseGate.o print.o fileIO.o
 
 wav.o: wav.cpp wav.h waveHeader.h
 	g++ -c -std=c++11 wav.cpp 
@@ -23,4 +23,4 @@ fileIO.o: fileIO.cpp fileIO.h waveHeader.h
 	g++ -c -std=c++11 fileIO.cpp waveHeader.h
 
 clean:
-	rm demo *.o *.h.gch
+	rm demo *.o *.h.gch *.csv

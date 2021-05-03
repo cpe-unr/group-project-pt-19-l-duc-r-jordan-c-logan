@@ -1,6 +1,7 @@
 //CS 202 Semester Project - PT 19
 
 #include "print.h"
+#include "fileIO.h"
 
 void Print::modifyPrinter(){
 	int input1;
@@ -39,21 +40,21 @@ void Print::processingPrinter(){
 			std::cout << "Normalization Processing" << std::endl;
  
 			Processor *normalizer = new Normalization();
-			normalizer->processBuffer(wav.getBuffer(),wav.getBufferSize());
+			normalizer->processBuffer(wav.getBuffer(),wav.getBufferSize(), wav.getBitDepth());
 			wav.writeFile(input3); 
 		}
 		else if(input2 == 2){
 			std::cout << "NoiseGate Processing" << std::endl; 
 	
 			Processor *noise = new NoiseGate(140, 116);
-			noise->processBuffer(wav.getBuffer(),wav.getBufferSize());
+			noise->processBuffer(wav.getBuffer(),wav.getBufferSize(), wav.getBitDepth());
 			wav.writeFile(input3);
 		}
 		else{
 			std::cout << "Echo Processing" << std::endl; 
 			
 			Processor *echo = new Echo(10000);
-			echo->processBuffer(wav.getBuffer(),wav.getBufferSize());	
+			echo->processBuffer(wav.getBuffer(),wav.getBufferSize(), wav.getBitDepth());	
 			wav.writeFile(input3);
 		}
 	
@@ -70,8 +71,12 @@ void Print::csvFilePrinter(){
 
 		std::cout << "Enter a filename for the CSV file (Ex. filname.csv): ";
 		std::cin >> filename;
-		//FileIO* csv = new FileIO(filename);
-		//delete csv;
+
+		Wav wav;
+
+		FileIO* csv = new FileIO();
+		csv->writeCsvFile(filename, wav.getBufferSize());
+		delete csv;
 	}
 	//creates CSV file with all the files info
 }

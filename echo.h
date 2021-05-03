@@ -14,6 +14,7 @@ class Echo : public Processor<T>
 
 
 
+<<<<<<< HEAD
 		void processBuffer(T* buffer, int bufferSize, short bitdepth)
         {
             std::cout << delay << std::endl; 
@@ -23,6 +24,9 @@ class Echo : public Processor<T>
             float adj_n;
             float adj_delayed_n;
             float finalEcho;
+=======
+        void processBuffer(unsigned char* buffer, int bufferSize, short bitdepth) override;
+>>>>>>> e35af725492486ec242c8b475000f049ba3f225e
 
             for(int i = 0; i < bufferSize - delay; i++){
                 adj_n = (float)(buffer[i] - MID);

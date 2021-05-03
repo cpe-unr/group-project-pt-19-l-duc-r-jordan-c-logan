@@ -1,9 +1,14 @@
+<<<<<<< HEAD
+=======
+//CS 202 Semester Project - PT 19
+
+>>>>>>> e35af725492486ec242c8b475000f049ba3f225e
 /** @file */
 #include <iostream>
 #include "wav.h"
 #include "waveHeader.h"
-//#include "fileIO.h"
-//#include "print.h"
+#include "fileIO.h"
+#include "print.h"
 #include "normalization.h"
 #include "processor.h"
 #include "echo.h"
@@ -41,13 +46,37 @@ int main() {
 	
         //UNCOMMENT THESE WHEN READY
 
-        //Print p;
-	//p.modifyPrinter();
-	//p.processingPrinter();
-        //eap.csvFilePrinter();	
+        Print p;
+	p.modifyPrinter();
+	p.processingPrinter();
+        p.csvFilePrinter();	
 
+<<<<<<< HEAD
         Wav wav;
         wav.readFile(testfile);
+=======
+        // Wav wav;
+        // wav.readFile(testfile);
+        // Processor *processorLimiter = new Limiter();
+        // processorLimiter->processBuffer(wav.getBuffer(), wav.getBufferSize());
+        // wav.writeFile(limitfile);
+
+         //wav.readFile(testfile);
+         //Processor *processorEcho = new Echo(7500);
+         //processorEcho->processBuffer(wav.getBuffer(), wav.getBufferSize(), wav.getBitDepth());
+         //wav.writeFile(echofile);
+
+        // wav.readFile(testfile);
+        // Processor *processorNoiseGate = new NoiseGate(.7);
+        // processorNoiseGate->processBuffer(wav.getBuffer(), wav.getBufferSize(), wav.getBitDepth());
+        // wav.writeFile(noisefile);
+
+       // Wav wav;
+       // wav.readFile(testfile);
+       // Processor *processorNormalization = new Normalization();
+       // processorNormalization->processBuffer(wav.getBuffer(), wav.getBufferSize(), wav.getBitDepth()); 
+       // wav.writeFile(normalizedfile);
+>>>>>>> e35af725492486ec242c8b475000f049ba3f225e
 
         if (wav.getBitDepth() == 8)
         {
@@ -80,8 +109,6 @@ int main() {
                 processorEcho->processBuffer(wav.getShortBuffer(), wav.getBufferSize(), wav.getBitDepth());
                 wav.writeFile(echofile);
         }
-
-
 
         return 0;
 }
