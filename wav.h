@@ -52,6 +52,7 @@ class Wav {
 	int sampleRate;
 	
 	std::vector<std::string> subChunk; 
+	std::vector<int> numChar;
         std::vector<std::string> actualData;
 
 
