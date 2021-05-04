@@ -2,10 +2,12 @@
 
 #include "print.h"
 #include "fileIO.h"
+#include "metaChunksHeader.h"
 
 void Print::modifyPrinter(){
  	int input1;
  	std::string file;
+	std::string metaChoice, newMeta;
 
  	std::cout << "Do you want to modify any files metadata? 1:yes or 0:no" << std::endl;
  	std::cin >> input1;
@@ -13,7 +15,7 @@ void Print::modifyPrinter(){
  		std::cout << "What file? " << std::endl;
  		std::cin >> file;
 		
-		std::cin >> file;
+		//std::cin >> file;
 
     Wav wav;
     wav.readFile(file);
