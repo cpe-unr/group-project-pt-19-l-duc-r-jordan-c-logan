@@ -34,70 +34,14 @@
 
 // }
 
-const std::string testfile = "yes-8bit-mono.wav";
-const std::string normalizedfile = "yes-8bit-mono-normalized.wav";
-const std::string echofile = "yes-8bit-mono-echo.wav";
-const std::string gateFile = "yes-8bit-mono-gated.wav";
-
 int main() 
-{
-        //Need to have for loop going through and reading each file!!!
-	
+{	
         //UNCOMMENT THESE WHEN READY
 
         Print p;
 	p.modifyPrinter();
-	//p.processingPrinter();
+	p.processingPrinter();
         p.csvFilePrinter();	
-
-        Wav wav;
-        wav.readFile(testfile);
-
-        if (wav.getBitDepth() == 8)
-        {
-                Processor<unsigned char> *processorNormalization = new Normalization<unsigned char>();
-                processorNormalization->processBuffer(wav.getBuffer(), wav.getBufferSize(), wav.getBitDepth());
-                wav.writeFile(normalizedfile);
-        }
-
-        else if (wav.getBitDepth() == 16)
-        {
-                Processor<short> *procesorNormalization = new Normalization<short>();
-                procesorNormalization->processBuffer(wav.getShortBuffer(), wav.getBufferSize(), wav.getBitDepth());
-                wav.writeFile(normalizedfile);
-        }
-
-        if (wav.getBitDepth() == 8)
-        {
-                wav.readFile(testfile);
-                Processor<unsigned char> *processorEcho = new Echo<unsigned char>(100000);
-                processorEcho->processBuffer(wav.getBuffer(), wav.getBufferSize(), wav.getBitDepth());
-                wav.writeFile(echofile);
-        }
-
-        else if (wav.getBitDepth() == 16)
-        {
-                wav.readFile(testfile);
-                Processor<short> *processorEcho = new Echo<short>(100000);
-                processorEcho->processBuffer(wav.getShortBuffer(), wav.getBufferSize(), wav.getBitDepth());
-                wav.writeFile(echofile);
-        }
-
-        if (wav.getBitDepth() == 8)
-        {
-                wav.readFile(testfile);
-                Processor<unsigned char> *processorNoiseGate = new NoiseGate<unsigned char>(.05);
-                processorNoiseGate->processBuffer(wav.getBuffer(), wav.getBufferSize(), wav.getBitDepth());
-                wav.writeFile(gateFile); 
-        }
-
-        else if(wav.getBitDepth() == 16)
-        {
-                wav.readFile(testfile);
-                Processor<short> *processorNoiseGate = new NoiseGate<short>(.05);
-                processorNoiseGate->processBuffer(wav.getShortBuffer(), wav.getBufferSize(), wav.getBitDepth());
-                wav.writeFile(gateFile); 
-        }
 
         return 0;
 }

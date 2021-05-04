@@ -34,25 +34,67 @@ void Print::processingPrinter(){
 		
 		Wav wav;
 		//TESTING LINE
-		wav.readFile("yes-8bit-mono.wav");		
+		//wav.readFile("yes-8bit-mono.wav");		
+        	wav.readFile(testfile);		
 
 		if(input2 == 1){
-			std::cout << "Normalization Processing" << std::endl;
- 
+
+			if (wav.getBitDepth() == 8)
+        		{
+                		Processor<unsigned char> *processorNormalization = new Normalization<unsigned char>();
+                		processorNormalization->processBuffer(wav.getBuffer(), wav.getBufferSize(), wav.getBitDepth());
+                		wav.writeFile(normalizedfile);
+        		}
+			else if (wav.getBitDepth() == 16)
+        		{
+                		Processor<short> *procesorNormalization = new Normalization<short>();
+                		procesorNormalization->processBuffer(wav.getShortBuffer(), wav.getBufferSize(), wav.getBitDepth());
+                		wav.writeFile(normalizedfile);
+        		} 
+
 			//Processor *normalizer = new Normalization();
 			//normalizer->processBuffer(wav.getBuffer(),wav.getBufferSize(), wav.getBitDepth());
 			//wav.writeFile(input3); 
 		}
 		else if(input2 == 2){
 			std::cout << "NoiseGate Processing" << std::endl; 
-	
+				
+			if (wav.getBitDepth() == 8)
+        		{
+                		wav.readFile(testfile);
+                		Processor<unsigned char> *processorNoiseGate = new NoiseGate<unsigned char>(.05);
+                		processorNoiseGate->processBuffer(wav.getBuffer(), wav.getBufferSize(), wav.getBitDepth());
+                		wav.writeFile(gateFile); 
+        		}
+        		else if(wav.getBitDepth() == 16)
+        		{
+                		wav.readFile(testfile);
+                		Processor<short> *processorNoiseGate = new NoiseGate<short>(.05);
+                		processorNoiseGate->processBuffer(wav.getShortBuffer(), wav.getBufferSize(), wav.getBitDepth());
+                		wav.writeFile(gateFile); 
+        		}
+
  			//Processor *noise = new NoiseGate(140, 116);
 			//noise->processBuffer(wav.getBuffer(),wav.getBufferSize(), wav.getBitDepth());
 			//wav.writeFile(input3);
 		}
 		else{
 			std::cout << "Echo Processing" << std::endl; 
-			
+			if (wav.getBitDepth() == 8)
+		        {
+        		        wav.readFile(testfile);
+                		Processor<unsigned char> *processorEcho = new Echo<unsigned char>(100000);
+                		processorEcho->processBuffer(wav.getBuffer(), wav.getBufferSize(), wav.getBitDepth());
+                		wav.writeFile(echofile);
+        			}
+        		else if (wav.getBitDepth() == 16)
+        		{
+                		wav.readFile(testfile);
+                		Processor<short> *processorEcho = new Echo<short>(100000);
+               			processorEcho->processBuffer(wav.getShortBuffer(), wav.getBufferSize(), wav.getBitDepth());
+               			wav.writeFile(echofile);
+        		}			
+
 			//Processor *echo = new Echo(10000);
 			//echo->processBuffer(wav.getBuffer(),wav.getBufferSize(), wav.getBitDepth());	
 			//wav.writeFile(input3);
