@@ -4,8 +4,6 @@
 #include "wav.h"
 
 
-
-
 //Getter
 short Wav::getBitDepth(){
     return bitDepth; 
@@ -70,8 +68,9 @@ void Wav::writeFile(const std::string &outFileName) {
 }
 
 Wav::~Wav() {
-    // if(buffer != NULL)
-    //     delete[] buffer;
+    //if(buffer != NULL){
+    //    delete[] buffer;
+    //}	
 }
 
 int Wav::getBufferSize(){

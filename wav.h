@@ -45,6 +45,10 @@ class Wav {
         short* shortBuffer;
 
     public:
+
+	/**
+	 * Destructor for the wav buffer that was added to the heap
+	 */
         virtual ~Wav();
 
     public:

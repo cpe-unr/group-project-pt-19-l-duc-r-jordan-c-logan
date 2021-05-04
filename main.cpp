@@ -48,7 +48,7 @@ int main()
         Print p;
 	p.modifyPrinter();
 	//p.processingPrinter();
-        //eap.csvFilePrinter();	
+        p.csvFilePrinter();	
 
         Wav wav;
         wav.readFile(testfile);
