@@ -6,6 +6,10 @@
 
 #include "waveHeader.h"
 
+/**
+ * This is the Wav class.
+ */
+
 class Wav {
     public:
         //short bitDepth;

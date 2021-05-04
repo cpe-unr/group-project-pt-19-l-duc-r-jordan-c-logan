@@ -11,6 +11,10 @@
 // #include "noiseGate.h"
 // #include "echo.h"
 
+/**
+ * This is the Print class.
+ */
+
 // class Print{
 // public:
 

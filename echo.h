@@ -4,6 +4,9 @@
 #include "processor.h"
 #include <iostream>
 
+/**
+ * This is the templated Echo class that inherits from the Processor class.
+ */
 
 template<class T>
 class Echo : public Processor<T>

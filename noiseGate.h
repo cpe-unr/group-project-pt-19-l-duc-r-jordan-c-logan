@@ -4,6 +4,9 @@
 #include <iostream>
 #include "processor.h"
 
+/**
+ * This is the templated NoiseGate class that inherits from the Processor class.
+ */
 
 template<class T>
 class NoiseGate : public Processor<T>

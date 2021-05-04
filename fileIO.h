@@ -7,6 +7,10 @@
 #include "wav.h"
 #include "print.h"
 
+/**
+ * This is the FileIO class.
+ */
+
 class FileIO{
 public:
 	/**

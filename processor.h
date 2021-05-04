@@ -6,8 +6,11 @@
 #include <cstdint>
 #include <cmath>
 
-template<typename T>
+/**
+ * This is the templated processor interface/abstract class.
+ */
 
+template<typename T>
 class Processor{
 public:
 	
