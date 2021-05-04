@@ -22,7 +22,7 @@ void FileIO::writeCsvFile(std::string file, int bufferSize){
 	std::ofstream dataFile(file);
 	
 	//Columns showing what data layout is
-	dataFile << "Filename, Chunk Size, Num Channels, Sample Rate, Bit Size, MetaData " << std::endl;
+	dataFile << "Filename, Format Header, Num Channels, Sample Rate, Bit Size, MetaData " << std::endl;
 
 	dataFile << p1.getFile() << ", " << w.getFmtHeader() << ", " << w.getNumChannels() << ", " << w.getSampleRate() << "," << w.getBitDepth() << ", " << m.info << std::endl;
 	
@@ -30,7 +30,12 @@ void FileIO::writeCsvFile(std::string file, int bufferSize){
 
 	dataFile << p1.getFileThree() << ", " << w3.getFmtHeader() << ", " << w3.getNumChannels() << ", " << w3.getSampleRate() << "," << w3.getBitDepth() << ", " << m.info << std::endl;
 
-	dataFile << p1.getFileFour() << ", " << w4.getFmtHeader() << ", " << w4.getNumChannels() << ", " << w4.getSampleRate() << "," << w4.getBitDepth() << ", " << m.info << std::endl;
+	dataFile << p1.getFileFour() << ", " << w4.getFmtHeader() << ", " << w4.getNumChannels() << ", " << w4.getSampleRate() << "," << w4.getBitDepth();
+
+	for (std::string x : w4.getSubChunk())
+	{
+	    dataFile << x << std::endl;
+	}
 
 	dataFile.close();
 }

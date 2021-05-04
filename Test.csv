@@ -1,0 +1,7 @@
+Filename, Format Header, Num Channels, Sample Rate, Bit Size, MetaData 
+yes-8-bit-stereo.wav, fmt , 2, 44100,8, 
+yes-8bit-mono.wav, fmt , 1, 44100,8, 
+yes-16-bit-mono.wav, fmt , 1, 44100,16, 
+yes-26-bit-stereo.wav, fmt , 2, 44100,16INAM
+IART
+ICMT
