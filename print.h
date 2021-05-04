@@ -42,9 +42,21 @@ public:
 	 */
  	void csvFilePrinter();
 
+ 	/**
+ 	* constant that gets first file
+ 	*/
 	std::string getFile() const;
+	/**
+	* constant that gets second file
+ 	*/
 	std::string getFileTwo() const;
+	/**
+	* constant that gets third file
+ 	*/
 	std::string getFileThree() const;
+	/**
+	* constant that gets fourth file
+ 	*/
 	std::string getFileFour() const;
 };
 

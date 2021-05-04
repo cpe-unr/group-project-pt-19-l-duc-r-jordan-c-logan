@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['cs_20202_20semester_20project_20template_20_2d_20pt_2019_20project_20outline_0',['CS 202 Semester Project Template - PT 19 Project Outline',['../index.html',1,'']]],
-  ['csvfileprinter_1',['csvFilePrinter',['../d8/d90/class_print.html#a5b2e1a13a8acb698cee33e4558952fe3',1,'Print']]]
+  ['audio_5fformat_0',['audio_format',['../dc/dd5/structwav__header.html#a94c9ee0387f846c47eb9e97636994d93',1,'wav_header']]]
 ];

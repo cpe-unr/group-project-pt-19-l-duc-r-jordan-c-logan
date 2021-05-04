@@ -10,9 +10,24 @@
      */
 
 typedef struct meta_header {
+
+	/**
+	* list
+	*/
+
     char list[4]; //LIST
+    /**
+    *chunk size
+    */
     int chunkSize; //Chunk Size
+    /**
+    * info
+    */
     char info[4]; //INFO
+
+    /**
+    *vector subchunks
+    */
     
     std::vector<sub_chunk> subChunks; 
     

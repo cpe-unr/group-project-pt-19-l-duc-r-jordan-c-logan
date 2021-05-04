@@ -76,68 +76,69 @@ $(function() {
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keywordtype">int</span> gateLimitPercent; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="../../d9/d07/class_noise_gate.html#a6c7348812e7f95529b106911a247ca74">   22</a></span>&#160;        <a class="code" href="../../d9/d07/class_noise_gate.html#a6c7348812e7f95529b106911a247ca74">NoiseGate</a>(<span class="keywordtype">int</span> newPercent): gateLimitPercent(newPercent){}</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        </div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="../../d9/d07/class_noise_gate.html#aed24061ffc24fc31752ff8dd9fe7000d">   31</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d9/d07/class_noise_gate.html#aed24061ffc24fc31752ff8dd9fe7000d">processBuffer</a>(T* buffer, <span class="keywordtype">int</span> bufferSize, <span class="keywordtype">short</span> bitdepth, <span class="keywordtype">short</span> numchannels)</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="keywordtype">int</span> upperThreshold, lowerThreshold; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            T zeroValue;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keywordflow">if</span> (bitdepth == 8)</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                zeroValue = pow(2, bitdepth);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                upperThreshold = zeroValue + (pow(2, bitdepth)*gateLimitPercent);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                lowerThreshold = zeroValue - (pow(2, bitdepth)*gateLimitPercent);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keywordflow">if</span> (bitdepth == 16)</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                zeroValue = 0;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                upperThreshold = zeroValue + (pow(2, bitdepth-1)*gateLimitPercent);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                lowerThreshold = zeroValue + (pow(2, bitdepth-1)*gateLimitPercent);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            }</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordflow">if</span> (numchannels == 1)</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; bufferSize; i++)</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                    <span class="keywordflow">if</span>(buffer[i] &lt; upperThreshold &amp;&amp; buffer[i] &gt; lowerThreshold)</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                    {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                        buffer[i] = zeroValue;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                    }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                }</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keywordflow">if</span> (numchannels == 2)</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; bufferSize; i+=2){</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                    <span class="keywordflow">if</span>(buffer[i] &lt; upperThreshold &amp;&amp; buffer[i] &gt; lowerThreshold){</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                        buffer[i] = zeroValue;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                    }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 1; j &lt; bufferSize; j+=2)</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                    <span class="keywordflow">if</span> (buffer[j] &lt; upperThreshold &amp;&amp; buffer[j] &gt; lowerThreshold)</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                    {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                        buffer[j] = zeroValue;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                    }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                }</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        }</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="../../d9/d07/class_noise_gate.html#aa74da7d7f8e269bdb24e07e245574792">   19</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="../../d9/d07/class_noise_gate.html#aa74da7d7f8e269bdb24e07e245574792">gateLimitPercent</a>; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="../../d9/d07/class_noise_gate.html#a6c7348812e7f95529b106911a247ca74">   25</a></span>&#160;        <a class="code" href="../../d9/d07/class_noise_gate.html#a6c7348812e7f95529b106911a247ca74">NoiseGate</a>(<span class="keywordtype">int</span> newPercent): <a class="code" href="../../d9/d07/class_noise_gate.html#aa74da7d7f8e269bdb24e07e245574792">gateLimitPercent</a>(newPercent){}</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="../../d9/d07/class_noise_gate.html#aed24061ffc24fc31752ff8dd9fe7000d">   34</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d9/d07/class_noise_gate.html#aed24061ffc24fc31752ff8dd9fe7000d">processBuffer</a>(T* buffer, <span class="keywordtype">int</span> bufferSize, <span class="keywordtype">short</span> bitdepth, <span class="keywordtype">short</span> numchannels)</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="keywordtype">int</span> upperThreshold, lowerThreshold; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            T zeroValue;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keywordflow">if</span> (bitdepth == 8)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                zeroValue = pow(2, bitdepth);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                upperThreshold = zeroValue + (pow(2, bitdepth)*<a class="code" href="../../d9/d07/class_noise_gate.html#aa74da7d7f8e269bdb24e07e245574792">gateLimitPercent</a>);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                lowerThreshold = zeroValue - (pow(2, bitdepth)*<a class="code" href="../../d9/d07/class_noise_gate.html#aa74da7d7f8e269bdb24e07e245574792">gateLimitPercent</a>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keywordflow">if</span> (bitdepth == 16)</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                zeroValue = 0;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                upperThreshold = zeroValue + (pow(2, bitdepth-1)*<a class="code" href="../../d9/d07/class_noise_gate.html#aa74da7d7f8e269bdb24e07e245574792">gateLimitPercent</a>);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                lowerThreshold = zeroValue + (pow(2, bitdepth-1)*<a class="code" href="../../d9/d07/class_noise_gate.html#aa74da7d7f8e269bdb24e07e245574792">gateLimitPercent</a>);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordflow">if</span> (numchannels == 1)</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; bufferSize; i++)</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                    <span class="keywordflow">if</span>(buffer[i] &lt; upperThreshold &amp;&amp; buffer[i] &gt; lowerThreshold)</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                    {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                        buffer[i] = zeroValue;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                    }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordflow">if</span> (numchannels == 2)</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; bufferSize; i+=2){</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                    <span class="keywordflow">if</span>(buffer[i] &lt; upperThreshold &amp;&amp; buffer[i] &gt; lowerThreshold){</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                        buffer[i] = zeroValue;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                    }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 1; j &lt; bufferSize; j+=2)</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                    <span class="keywordflow">if</span> (buffer[j] &lt; upperThreshold &amp;&amp; buffer[j] &gt; lowerThreshold)</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                    {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                        buffer[j] = zeroValue;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                    }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            }</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;};</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//NOSIEGATE_H</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;};</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//NOSIEGATE_H</span></div>
 <div class="ttc" id="aclass_noise_gate_html"><div class="ttname"><a href="../../d9/d07/class_noise_gate.html">NoiseGate</a></div><div class="ttdef"><b>Definition:</b> noiseGate.h:13</div></div>
-<div class="ttc" id="aclass_noise_gate_html_a6c7348812e7f95529b106911a247ca74"><div class="ttname"><a href="../../d9/d07/class_noise_gate.html#a6c7348812e7f95529b106911a247ca74">NoiseGate::NoiseGate</a></div><div class="ttdeci">NoiseGate(int newPercent)</div><div class="ttdef"><b>Definition:</b> noiseGate.h:22</div></div>
-<div class="ttc" id="aclass_noise_gate_html_aed24061ffc24fc31752ff8dd9fe7000d"><div class="ttname"><a href="../../d9/d07/class_noise_gate.html#aed24061ffc24fc31752ff8dd9fe7000d">NoiseGate::processBuffer</a></div><div class="ttdeci">void processBuffer(T *buffer, int bufferSize, short bitdepth, short numchannels)</div><div class="ttdef"><b>Definition:</b> noiseGate.h:31</div></div>
+<div class="ttc" id="aclass_noise_gate_html_a6c7348812e7f95529b106911a247ca74"><div class="ttname"><a href="../../d9/d07/class_noise_gate.html#a6c7348812e7f95529b106911a247ca74">NoiseGate::NoiseGate</a></div><div class="ttdeci">NoiseGate(int newPercent)</div><div class="ttdef"><b>Definition:</b> noiseGate.h:25</div></div>
+<div class="ttc" id="aclass_noise_gate_html_aa74da7d7f8e269bdb24e07e245574792"><div class="ttname"><a href="../../d9/d07/class_noise_gate.html#aa74da7d7f8e269bdb24e07e245574792">NoiseGate::gateLimitPercent</a></div><div class="ttdeci">int gateLimitPercent</div><div class="ttdef"><b>Definition:</b> noiseGate.h:19</div></div>
+<div class="ttc" id="aclass_noise_gate_html_aed24061ffc24fc31752ff8dd9fe7000d"><div class="ttname"><a href="../../d9/d07/class_noise_gate.html#aed24061ffc24fc31752ff8dd9fe7000d">NoiseGate::processBuffer</a></div><div class="ttdeci">void processBuffer(T *buffer, int bufferSize, short bitdepth, short numchannels)</div><div class="ttdef"><b>Definition:</b> noiseGate.h:34</div></div>
 <div class="ttc" id="aclass_processor_html"><div class="ttname"><a href="../../db/d33/class_processor.html">Processor</a></div><div class="ttdef"><b>Definition:</b> processor.h:14</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

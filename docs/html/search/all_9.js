@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['setbitdepth_25',['setBitDepth',['../db/d5d/class_wav.html#ae2f7e1aad6da27cf88fd590caa66180f',1,'Wav']]],
-  ['setfmtheader_26',['setFmtHeader',['../db/d5d/class_wav.html#a33c4bc3842f6de27776aebb96f3d256c',1,'Wav']]],
-  ['setnumchannels_27',['setNumChannels',['../db/d5d/class_wav.html#aadde6f99b7bee1648a9b816fa1a36baa',1,'Wav']]],
-  ['setsamplerate_28',['setSampleRate',['../db/d5d/class_wav.html#aa1bf61e16196a60aadb4310949f65cd7',1,'Wav']]],
-  ['sub_5fchunk_29',['sub_chunk',['../d8/db5/structsub__chunk.html',1,'']]]
+  ['main_29',['main',['../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]],
+  ['main_2ecpp_30',['main.cpp',['../df/d0a/main_8cpp.html',1,'']]],
+  ['meta_5fheader_31',['meta_header',['../df/d16/structmeta__header.html',1,'']]],
+  ['modifyprinter_32',['modifyPrinter',['../d8/d90/class_print.html#aeb119a674581ec0354e98c4114f0ebc4',1,'Print']]]
 ];

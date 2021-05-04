@@ -19,6 +19,7 @@ public:
 	 * @param buffer - array holding audio buffer, in Templated type T data type
 	 * @param bufferSize - size of wav files buffer, in integers
 	 * @param bitdepth - bit size of wav file, in short integers
+	 * @param numchannels - number of channels, in short integers
 	 */ 
     virtual void processBuffer(T* buffer, int bufferSize, short bitdepth, short numchannels) = 0;
 

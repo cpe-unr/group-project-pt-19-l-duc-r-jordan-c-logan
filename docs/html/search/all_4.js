@@ -1,12 +1,4 @@
 var searchData=
 [
-  ['getactualdata_5',['getActualData',['../db/d5d/class_wav.html#ad6b1d51b060e996cbce7d11f2c637aa1',1,'Wav']]],
-  ['getbitdepth_6',['getBitDepth',['../db/d5d/class_wav.html#a7620ba9a7653b718ac96f11ff4e453f3',1,'Wav']]],
-  ['getbuffer_7',['getBuffer',['../db/d5d/class_wav.html#a2daf07a90ed34789e3a1874973d9bd36',1,'Wav']]],
-  ['getbuffersize_8',['getBufferSize',['../db/d5d/class_wav.html#a11de10cb698ea0ea08f3a28580f21b39',1,'Wav']]],
-  ['getfmtheader_9',['getFmtHeader',['../db/d5d/class_wav.html#a69745d86db6b60cb7a2504002bec406a',1,'Wav']]],
-  ['getnumchannels_10',['getNumChannels',['../db/d5d/class_wav.html#a5450e63d090ea1d41aced0ccf4c60f36',1,'Wav']]],
-  ['getsamplerate_11',['getSampleRate',['../db/d5d/class_wav.html#ac6005a86d05843683afc584be759b600',1,'Wav']]],
-  ['getshortbuffer_12',['getShortBuffer',['../db/d5d/class_wav.html#aa5534bd29df6ef1be9ed856d300fd754',1,'Wav']]],
-  ['getsubchunk_13',['getSubChunk',['../db/d5d/class_wav.html#a86ff90279390140f2fe68cf92f8e4b65',1,'Wav']]]
+  ['echo_9',['Echo',['../d5/dcc/class_echo.html',1,'Echo&lt; T &gt;'],['../d5/dcc/class_echo.html#a3a6b0ba7009248f3db1848be97a725fc',1,'Echo::Echo()']]]
 ];

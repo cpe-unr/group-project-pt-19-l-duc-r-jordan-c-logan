@@ -13,6 +13,9 @@ class NoiseGate : public Processor<T>
 {
 
 	public:
+		/**
+		* scaling factors
+		*/
 		int gateLimitPercent; 
 
 	/**

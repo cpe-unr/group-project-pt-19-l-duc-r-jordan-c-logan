@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['main_14',['main',['../df/d0a/main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]],
-  ['main_2ecpp_15',['main.cpp',['../df/d0a/main_8cpp.html',1,'']]],
-  ['meta_5fheader_16',['meta_header',['../df/d16/structmeta__header.html',1,'']]],
-  ['modifyprinter_17',['modifyPrinter',['../d8/d90/class_print.html#aeb119a674581ec0354e98c4114f0ebc4',1,'Print']]]
+  ['fileio_10',['FileIO',['../d9/d3f/class_file_i_o.html',1,'FileIO'],['../d9/d3f/class_file_i_o.html#a8b0d602c3461181e12c05f655dea5018',1,'FileIO::FileIO()']]],
+  ['fmt_5fchunk_5fsize_11',['fmt_chunk_size',['../dc/dd5/structwav__header.html#a5fb4363d52bbff51ca2e8884408208c6',1,'wav_header']]],
+  ['fmt_5fheader_12',['fmt_header',['../dc/dd5/structwav__header.html#a4039d1e8e91d7940aa45a29aad27b4ce',1,'wav_header']]]
 ];

@@ -1,5 +1,14 @@
-# CS 202 Semester Project Template - PT 19 Project Outline
+## CS 202 Semester Project Template - PT 19 Project Outline
 
+#Group Members 
+Logan Church, Duc La, Jordan Rood
+
+#Responsibilities
+Duc-Wav functions, UI, CSV file
+Jordan-File IO, Wav functions, UI, CSV file, comments
+Logan-Editiing, Doxygen, Comments
+
+# Description
 Wav:
 Functions:
 	readFile() - read in wav file data
@@ -119,3 +128,8 @@ Rough overview
 			//create CSV file with all the files info//
 
 		}
+
+# Challenges
+The CSV took a bit of time getting up and running and working with other parts such as the metadata.
+The metadata caused a lot of issues, mainly trying to get it to work properly with the CSV file and the other functions. Had trouble looping in certain areas and modifying the metadata.
+There were some other minor errors with but they didn't turn out to be nearly as troublesome.

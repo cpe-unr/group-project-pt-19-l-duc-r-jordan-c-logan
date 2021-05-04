@@ -18,7 +18,7 @@ class Wav {
 
 	/**
 	 * Reads in wav file 
-	 * @param filename - constant audio file name, in a string
+	 * @param fileName - constant output audio file
 	 */ 
         void readFile(const std::string &fileName);
 
