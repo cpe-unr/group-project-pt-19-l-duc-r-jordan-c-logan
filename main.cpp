@@ -2,8 +2,8 @@
 #include <iostream>
 #include "wav.h"
 #include "waveHeader.h"
-//#include "fileIO.h"
-//#include "print.h"
+#include "fileIO.h"
+#include "print.h"
 #include "normalization.h"
 #include "processor.h"
 #include "echo.h"
@@ -45,8 +45,8 @@ int main()
 	
         //UNCOMMENT THESE WHEN READY
 
-        //Print p;
-	//p.modifyPrinter();
+        Print p;
+	p.modifyPrinter();
 	//p.processingPrinter();
         //eap.csvFilePrinter();	
 
