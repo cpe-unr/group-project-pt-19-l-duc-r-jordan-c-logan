@@ -4,11 +4,18 @@
 #include "processor.h"
 #include <iostream>
 
+        /**
+        * This is the Echo class.
+        */
 
 template<class T>
 class Echo : public Processor<T>
 {
 	public:
+
+        /**
+        * delay scale
+        */
 
         int delay; 
 	

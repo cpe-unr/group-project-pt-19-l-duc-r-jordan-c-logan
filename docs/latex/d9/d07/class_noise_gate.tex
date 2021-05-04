@@ -1,0 +1,76 @@
+\hypertarget{class_noise_gate}{}\doxysection{Noise\+Gate$<$ T $>$ Class Template Reference}
+\label{class_noise_gate}\index{NoiseGate$<$ T $>$@{NoiseGate$<$ T $>$}}
+
+
+{\ttfamily \#include $<$noise\+Gate.\+h$>$}
+
+Inheritance diagram for Noise\+Gate$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d9/d07/class_noise_gate}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_noise_gate_a6c7348812e7f95529b106911a247ca74}{Noise\+Gate}} (int new\+Percent)
+\item 
+void \mbox{\hyperlink{class_noise_gate_aed24061ffc24fc31752ff8dd9fe7000d}{process\+Buffer}} (T $\ast$buffer, int buffer\+Size, short bitdepth, short numchannels)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_noise_gate_aa74da7d7f8e269bdb24e07e245574792}\label{class_noise_gate_aa74da7d7f8e269bdb24e07e245574792}} 
+int {\bfseries gate\+Limit\+Percent}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class Noise\+Gate$<$ T $>$}
+
+This is the \mbox{\hyperlink{class_noise_gate}{Noise\+Gate}} class. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_noise_gate_a6c7348812e7f95529b106911a247ca74}\label{class_noise_gate_a6c7348812e7f95529b106911a247ca74}} 
+\index{NoiseGate$<$ T $>$@{NoiseGate$<$ T $>$}!NoiseGate@{NoiseGate}}
+\index{NoiseGate@{NoiseGate}!NoiseGate$<$ T $>$@{NoiseGate$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{NoiseGate()}{NoiseGate()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{class_noise_gate}{Noise\+Gate}}$<$ T $>$\+::\mbox{\hyperlink{class_noise_gate}{Noise\+Gate}} (\begin{DoxyParamCaption}\item[{int}]{new\+Percent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor for \mbox{\hyperlink{class_noise_gate}{Noise\+Gate}} class the sets the scale the the amplitude will be scaled by 
+\begin{DoxyParams}{Parameters}
+{\em new\+Percent} & -\/ scaling factor, in integers \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_noise_gate_aed24061ffc24fc31752ff8dd9fe7000d}\label{class_noise_gate_aed24061ffc24fc31752ff8dd9fe7000d}} 
+\index{NoiseGate$<$ T $>$@{NoiseGate$<$ T $>$}!processBuffer@{processBuffer}}
+\index{processBuffer@{processBuffer}!NoiseGate$<$ T $>$@{NoiseGate$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{processBuffer()}{processBuffer()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_noise_gate}{Noise\+Gate}}$<$ T $>$\+::process\+Buffer (\begin{DoxyParamCaption}\item[{T $\ast$}]{buffer,  }\item[{int}]{buffer\+Size,  }\item[{short}]{bitdepth,  }\item[{short}]{numchannels }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Overrides abstract class/interface process\+Buffer to manipulate the wav buffer by deleting any sound within a threshold 
+\begin{DoxyParams}{Parameters}
+{\em buffer} & -\/ buffer array from the audio read in, in template data type T \\
+\hline
+{\em buffer\+Size} & -\/ size of buffer from wav files, in integers \\
+\hline
+{\em bitdepth} & -\/ bit size/length from read in wav files, in short integers \\
+\hline
+{\em numchannels} & -\/ number of channels in the read in wav files to determine mono or stereo, int short integers \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_processor_a3d41fad6f45b5f000e3837231162de6c}{Processor$<$ T $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+noise\+Gate.\+h\end{DoxyCompactItemize}

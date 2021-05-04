@@ -4,6 +4,9 @@
 #include <iostream>
 #include "processor.h"
 
+	/**
+	* This is the NoiseGate class.
+	*/
 
 template<class T>
 class NoiseGate : public Processor<T>

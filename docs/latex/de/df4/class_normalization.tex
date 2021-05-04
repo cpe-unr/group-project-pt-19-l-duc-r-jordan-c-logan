@@ -1,0 +1,53 @@
+\hypertarget{class_normalization}{}\doxysection{Normalization$<$ T $>$ Class Template Reference}
+\label{class_normalization}\index{Normalization$<$ T $>$@{Normalization$<$ T $>$}}
+
+
+{\ttfamily \#include $<$normalization.\+h$>$}
+
+Inheritance diagram for Normalization$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{de/df4/class_normalization}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_normalization_a3653fd6a712a33cbfdd4fdd3cecbc9e6}{process\+Buffer}} (T $\ast$buffer, int buffer\+Size, short bitdepth, short numchannels)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class Normalization$<$ T $>$}
+
+This is the \mbox{\hyperlink{class_normalization}{Normalization}} class. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_normalization_a3653fd6a712a33cbfdd4fdd3cecbc9e6}\label{class_normalization_a3653fd6a712a33cbfdd4fdd3cecbc9e6}} 
+\index{Normalization$<$ T $>$@{Normalization$<$ T $>$}!processBuffer@{processBuffer}}
+\index{processBuffer@{processBuffer}!Normalization$<$ T $>$@{Normalization$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{processBuffer()}{processBuffer()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_normalization}{Normalization}}$<$ T $>$\+::process\+Buffer (\begin{DoxyParamCaption}\item[{T $\ast$}]{buffer,  }\item[{int}]{buffer\+Size,  }\item[{short}]{bitdepth,  }\item[{short}]{numchannels }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Overrides abstract class/interface process\+Buffer to manipulate the wav buffer by amplifying the audio by a caluculated distance 
+\begin{DoxyParams}{Parameters}
+{\em buffer} & -\/ buffer array from the audio read in, in template data type T \\
+\hline
+{\em buffer\+Size} & -\/ size of buffer from wav files, in integers \\
+\hline
+{\em bitdepth} & -\/ bit size/length from read in wav files, in short integers \\
+\hline
+{\em numchannels} & -\/ number of channels in the read in wav files to determine mono or stereo, int short integers \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_processor_a3d41fad6f45b5f000e3837231162de6c}{Processor$<$ T $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+normalization.\+h\end{DoxyCompactItemize}
