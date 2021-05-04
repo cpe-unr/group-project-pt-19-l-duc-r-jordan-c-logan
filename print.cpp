@@ -42,13 +42,13 @@ void Print::processingPrinter(){
 			if (wav.getBitDepth() == 8)
         		{
                 		Processor<unsigned char> *processorNormalization = new Normalization<unsigned char>();
-                		processorNormalization->processBuffer(wav.getBuffer(), wav.getBufferSize(), wav.getBitDepth());
+                		processorNormalization->processBuffer(wav.getBuffer(), wav.getBufferSize(), wav.getBitDepth(), wav.getNumChannels());
                 		wav.writeFile(normalizedfile);
         		}
 			else if (wav.getBitDepth() == 16)
         		{
                 		Processor<short> *procesorNormalization = new Normalization<short>();
-                		procesorNormalization->processBuffer(wav.getShortBuffer(), wav.getBufferSize(), wav.getBitDepth());
+                		procesorNormalization->processBuffer(wav.getShortBuffer(), wav.getBufferSize(), wav.getBitDepth(), wav.getNumChannels());
                 		wav.writeFile(normalizedfile);
         		} 
 
@@ -63,14 +63,14 @@ void Print::processingPrinter(){
         		{
                 		wav.readFile(testfile);
                 		Processor<unsigned char> *processorNoiseGate = new NoiseGate<unsigned char>(.05);
-                		processorNoiseGate->processBuffer(wav.getBuffer(), wav.getBufferSize(), wav.getBitDepth());
+                		processorNoiseGate->processBuffer(wav.getBuffer(), wav.getBufferSize(), wav.getBitDepth(), wav.getNumChannels());
                 		wav.writeFile(gateFile); 
         		}
         		else if(wav.getBitDepth() == 16)
         		{
                 		wav.readFile(testfile);
                 		Processor<short> *processorNoiseGate = new NoiseGate<short>(.05);
-                		processorNoiseGate->processBuffer(wav.getShortBuffer(), wav.getBufferSize(), wav.getBitDepth());
+                		processorNoiseGate->processBuffer(wav.getShortBuffer(), wav.getBufferSize(), wav.getBitDepth(), wav.getNumChannels());
                 		wav.writeFile(gateFile); 
         		}
 
@@ -84,14 +84,14 @@ void Print::processingPrinter(){
 		        {
         		        wav.readFile(testfile);
                 		Processor<unsigned char> *processorEcho = new Echo<unsigned char>(100000);
-                		processorEcho->processBuffer(wav.getBuffer(), wav.getBufferSize(), wav.getBitDepth());
+                		processorEcho->processBuffer(wav.getBuffer(), wav.getBufferSize(), wav.getBitDepth(), wav.getNumChannels());
                 		wav.writeFile(echofile);
         			}
         		else if (wav.getBitDepth() == 16)
         		{
                 		wav.readFile(testfile);
                 		Processor<short> *processorEcho = new Echo<short>(100000);
-               			processorEcho->processBuffer(wav.getShortBuffer(), wav.getBufferSize(), wav.getBitDepth());
+               			processorEcho->processBuffer(wav.getShortBuffer(), wav.getBufferSize(), wav.getBitDepth(),wav.getNumChannels());
                			wav.writeFile(echofile);
         		}			
 
@@ -120,4 +120,3 @@ void Print::csvFilePrinter(){
 	}
 	//creates CSV file with all the files info
 }
-
