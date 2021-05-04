@@ -35,6 +35,32 @@ void Wav::readFile(const std::string &fileName) {
             shortBuffer = new short[waveHeader.data_bytes];
             file.read(reinterpret_cast<char*>(shortBuffer), waveHeader.data_bytes);
         }
+		
+		//Metadata header reading
+        file.read((char*)&metaHeader, sizeof(meta_header));
+
+        //Read in the metadata
+        while (!file.eof())
+        {
+          char subChunkHeader[4];
+          file.read((char*)&subChunkHeader, 4);
+          subChunk.push_back(subChunkHeader);
+          
+          int subChunkSize; 
+          file.read((char*)&subChunkSize, 4);
+
+          char actual[subChunkSize];
+          file.read((char*)&actual, subChunkSize);
+
+          actualData.push_back(actual);
+        }
+
+        file.close();
+
+        //Erase useless ID 3 that is for other programs
+        subChunk.erase(subChunk.end()-2, subChunk.end());
+        actualData.erase(actualData.end()-2, actualData.end());
+		
         file.close();
 
     }
@@ -48,6 +74,16 @@ unsigned char *Wav::getBuffer(){
 short *Wav::getShortBuffer()
 {
     return shortBuffer;
+}
+
+std::vector<std::string> Wav::getSubChunk()
+{
+  return subChunk;
+}
+
+std::vector<std::string> Wav::getActualData()
+{
+  return actualData;
 }
 
 void Wav::writeFile(const std::string &outFileName) {
@@ -68,7 +104,7 @@ void Wav::writeFile(const std::string &outFileName) {
     {
         outFile.write(reinterpret_cast<char*>(shortBuffer), waveHeader.data_bytes);
     }
-
+	
     outFile.close();
 
 }
