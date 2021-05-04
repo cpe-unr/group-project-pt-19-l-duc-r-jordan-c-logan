@@ -6,6 +6,10 @@
 #include "waveHeader.h"
 #include "wav.h"
 
+	/**
+	* This is the Normalization class.
+	*/
+
 template <class T>
 class Normalization : public Processor<T>
 {

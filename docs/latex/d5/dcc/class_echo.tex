@@ -1,0 +1,85 @@
+\hypertarget{class_echo}{}\doxysection{Echo$<$ T $>$ Class Template Reference}
+\label{class_echo}\index{Echo$<$ T $>$@{Echo$<$ T $>$}}
+
+
+{\ttfamily \#include $<$echo.\+h$>$}
+
+Inheritance diagram for Echo$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d5/dcc/class_echo}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_echo_a3a6b0ba7009248f3db1848be97a725fc}{Echo}} (int new\+Delay)
+\item 
+void \mbox{\hyperlink{class_echo_a2ca020d2a5dc0d8a5b3b779f89288de2}{process\+Buffer}} (T $\ast$buffer, int buffer\+Size, short bitdepth, short numchannels)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_echo_a2ca9d61ad7d321142d06d89bbfc3d2fa}{delay}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class Echo$<$ T $>$}
+
+This is the \mbox{\hyperlink{class_echo}{Echo}} class. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_echo_a3a6b0ba7009248f3db1848be97a725fc}\label{class_echo_a3a6b0ba7009248f3db1848be97a725fc}} 
+\index{Echo$<$ T $>$@{Echo$<$ T $>$}!Echo@{Echo}}
+\index{Echo@{Echo}!Echo$<$ T $>$@{Echo$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Echo()}{Echo()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{class_echo}{Echo}}$<$ T $>$\+::\mbox{\hyperlink{class_echo}{Echo}} (\begin{DoxyParamCaption}\item[{int}]{new\+Delay }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor for \mbox{\hyperlink{class_echo}{Echo}} class that sets the value for the echo delay given 
+\begin{DoxyParams}{Parameters}
+{\em new\+Delay} & -\/ delay scale for echoeing, in integers \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_echo_a2ca020d2a5dc0d8a5b3b779f89288de2}\label{class_echo_a2ca020d2a5dc0d8a5b3b779f89288de2}} 
+\index{Echo$<$ T $>$@{Echo$<$ T $>$}!processBuffer@{processBuffer}}
+\index{processBuffer@{processBuffer}!Echo$<$ T $>$@{Echo$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{processBuffer()}{processBuffer()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_echo}{Echo}}$<$ T $>$\+::process\+Buffer (\begin{DoxyParamCaption}\item[{T $\ast$}]{buffer,  }\item[{int}]{buffer\+Size,  }\item[{short}]{bitdepth,  }\item[{short}]{numchannels }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Overrides abstract class/interface process\+Buffer to manipulate the wav buffer by echoing the audio 
+\begin{DoxyParams}{Parameters}
+{\em buffer} & -\/ buffer array from the audio read in, in template data type T \\
+\hline
+{\em buffer\+Size} & -\/ size of buffer from wav files, in integers \\
+\hline
+{\em bitdepth} & -\/ bit size/length from read in wav files, in short integers \\
+\hline
+{\em numchannels} & -\/ number of channels in the read in wav files to determine mono or stereo, int short integers \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_processor_a3d41fad6f45b5f000e3837231162de6c}{Processor$<$ T $>$}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_echo_a2ca9d61ad7d321142d06d89bbfc3d2fa}\label{class_echo_a2ca9d61ad7d321142d06d89bbfc3d2fa}} 
+\index{Echo$<$ T $>$@{Echo$<$ T $>$}!delay@{delay}}
+\index{delay@{delay}!Echo$<$ T $>$@{Echo$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{delay}{delay}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \mbox{\hyperlink{class_echo}{Echo}}$<$ T $>$\+::delay}
+
+delay scale 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+echo.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,167 @@
+\hypertarget{class_wav}{}\doxysection{Wav Class Reference}
+\label{class_wav}\index{Wav@{Wav}}
+
+
+{\ttfamily \#include $<$wav.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_wav_a1c4230cec49d30147a5b8a1950083f7c}{read\+File}} (const std\+::string \&file\+Name)
+\item 
+void \mbox{\hyperlink{class_wav_ad86f4a21d36719ae375ea2586f9f591f}{write\+File}} (const std\+::string \&out\+File\+Name)
+\item 
+short \mbox{\hyperlink{class_wav_a7620ba9a7653b718ac96f11ff4e453f3}{get\+Bit\+Depth}} ()
+\item 
+void \mbox{\hyperlink{class_wav_ae2f7e1aad6da27cf88fd590caa66180f}{set\+Bit\+Depth}} (short new\+Bit\+Depth)
+\item 
+virtual \mbox{\hyperlink{class_wav_a1510b246ba121b103a60b8e7839af25f}{$\sim$\+Wav}} ()
+\item 
+unsigned char $\ast$ \mbox{\hyperlink{class_wav_a2daf07a90ed34789e3a1874973d9bd36}{get\+Buffer}} ()
+\item 
+int \mbox{\hyperlink{class_wav_a11de10cb698ea0ea08f3a28580f21b39}{get\+Buffer\+Size}} ()
+\item 
+short $\ast$ \mbox{\hyperlink{class_wav_aa5534bd29df6ef1be9ed856d300fd754}{get\+Short\+Buffer}} ()
+\item 
+short \mbox{\hyperlink{class_wav_a5450e63d090ea1d41aced0ccf4c60f36}{get\+Num\+Channels}} ()
+\item 
+void \mbox{\hyperlink{class_wav_aadde6f99b7bee1648a9b816fa1a36baa}{set\+Num\+Channels}} (short new\+Num\+Channels)
+\item 
+char $\ast$ \mbox{\hyperlink{class_wav_a69745d86db6b60cb7a2504002bec406a}{get\+Fmt\+Header}} ()
+\item 
+void \mbox{\hyperlink{class_wav_a33c4bc3842f6de27776aebb96f3d256c}{set\+Fmt\+Header}} (char $\ast$new\+Fmt\+Header)
+\item 
+int \mbox{\hyperlink{class_wav_ac6005a86d05843683afc584be759b600}{get\+Sample\+Rate}} ()
+\item 
+void \mbox{\hyperlink{class_wav_aa1bf61e16196a60aadb4310949f65cd7}{set\+Sample\+Rate}} (int new\+Sample\+Rate)
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_wav_a86ff90279390140f2fe68cf92f8e4b65}{get\+Sub\+Chunk}} ()
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_wav_ad6b1d51b060e996cbce7d11f2c637aa1}{get\+Actual\+Data}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This is the \mbox{\hyperlink{class_wav}{Wav}} class. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_wav_a1510b246ba121b103a60b8e7839af25f}\label{class_wav_a1510b246ba121b103a60b8e7839af25f}} 
+\index{Wav@{Wav}!````~Wav@{$\sim$Wav}}
+\index{````~Wav@{$\sim$Wav}!Wav@{Wav}}
+\doxysubsubsection{\texorpdfstring{$\sim$Wav()}{~Wav()}}
+{\footnotesize\ttfamily Wav\+::$\sim$\+Wav (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Destructor for the wav buffer that was added to the heap 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_wav_ad6b1d51b060e996cbce7d11f2c637aa1}\label{class_wav_ad6b1d51b060e996cbce7d11f2c637aa1}} 
+\index{Wav@{Wav}!getActualData@{getActualData}}
+\index{getActualData@{getActualData}!Wav@{Wav}}
+\doxysubsubsection{\texorpdfstring{getActualData()}{getActualData()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ Wav\+::get\+Actual\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Getter for actual metadata (i.\+e. Title, artist) \mbox{\Hypertarget{class_wav_a7620ba9a7653b718ac96f11ff4e453f3}\label{class_wav_a7620ba9a7653b718ac96f11ff4e453f3}} 
+\index{Wav@{Wav}!getBitDepth@{getBitDepth}}
+\index{getBitDepth@{getBitDepth}!Wav@{Wav}}
+\doxysubsubsection{\texorpdfstring{getBitDepth()}{getBitDepth()}}
+{\footnotesize\ttfamily short Wav\+::get\+Bit\+Depth (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Getter for a wav file\textquotesingle{}s bit depth, or bit capacity \mbox{\Hypertarget{class_wav_a2daf07a90ed34789e3a1874973d9bd36}\label{class_wav_a2daf07a90ed34789e3a1874973d9bd36}} 
+\index{Wav@{Wav}!getBuffer@{getBuffer}}
+\index{getBuffer@{getBuffer}!Wav@{Wav}}
+\doxysubsubsection{\texorpdfstring{getBuffer()}{getBuffer()}}
+{\footnotesize\ttfamily unsigned char $\ast$ Wav\+::get\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Getter for 8 bit wav file\textquotesingle{}s unsigned char buffer \mbox{\Hypertarget{class_wav_a11de10cb698ea0ea08f3a28580f21b39}\label{class_wav_a11de10cb698ea0ea08f3a28580f21b39}} 
+\index{Wav@{Wav}!getBufferSize@{getBufferSize}}
+\index{getBufferSize@{getBufferSize}!Wav@{Wav}}
+\doxysubsubsection{\texorpdfstring{getBufferSize()}{getBufferSize()}}
+{\footnotesize\ttfamily int Wav\+::get\+Buffer\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Getter for the buffersize of audio files \mbox{\Hypertarget{class_wav_a69745d86db6b60cb7a2504002bec406a}\label{class_wav_a69745d86db6b60cb7a2504002bec406a}} 
+\index{Wav@{Wav}!getFmtHeader@{getFmtHeader}}
+\index{getFmtHeader@{getFmtHeader}!Wav@{Wav}}
+\doxysubsubsection{\texorpdfstring{getFmtHeader()}{getFmtHeader()}}
+{\footnotesize\ttfamily char $\ast$ Wav\+::get\+Fmt\+Header (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Getter for format header from wav files \mbox{\Hypertarget{class_wav_a5450e63d090ea1d41aced0ccf4c60f36}\label{class_wav_a5450e63d090ea1d41aced0ccf4c60f36}} 
+\index{Wav@{Wav}!getNumChannels@{getNumChannels}}
+\index{getNumChannels@{getNumChannels}!Wav@{Wav}}
+\doxysubsubsection{\texorpdfstring{getNumChannels()}{getNumChannels()}}
+{\footnotesize\ttfamily short Wav\+::get\+Num\+Channels (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Getter for number of Channels in wav files \mbox{\Hypertarget{class_wav_ac6005a86d05843683afc584be759b600}\label{class_wav_ac6005a86d05843683afc584be759b600}} 
+\index{Wav@{Wav}!getSampleRate@{getSampleRate}}
+\index{getSampleRate@{getSampleRate}!Wav@{Wav}}
+\doxysubsubsection{\texorpdfstring{getSampleRate()}{getSampleRate()}}
+{\footnotesize\ttfamily int Wav\+::get\+Sample\+Rate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Getter for sample rate of wav files \mbox{\Hypertarget{class_wav_aa5534bd29df6ef1be9ed856d300fd754}\label{class_wav_aa5534bd29df6ef1be9ed856d300fd754}} 
+\index{Wav@{Wav}!getShortBuffer@{getShortBuffer}}
+\index{getShortBuffer@{getShortBuffer}!Wav@{Wav}}
+\doxysubsubsection{\texorpdfstring{getShortBuffer()}{getShortBuffer()}}
+{\footnotesize\ttfamily short $\ast$ Wav\+::get\+Short\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Getter for 16 bit wav file\textquotesingle{}s short buffer \mbox{\Hypertarget{class_wav_a86ff90279390140f2fe68cf92f8e4b65}\label{class_wav_a86ff90279390140f2fe68cf92f8e4b65}} 
+\index{Wav@{Wav}!getSubChunk@{getSubChunk}}
+\index{getSubChunk@{getSubChunk}!Wav@{Wav}}
+\doxysubsubsection{\texorpdfstring{getSubChunk()}{getSubChunk()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ Wav\+::get\+Sub\+Chunk (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Getter for metadata subchunk \mbox{\Hypertarget{class_wav_a1c4230cec49d30147a5b8a1950083f7c}\label{class_wav_a1c4230cec49d30147a5b8a1950083f7c}} 
+\index{Wav@{Wav}!readFile@{readFile}}
+\index{readFile@{readFile}!Wav@{Wav}}
+\doxysubsubsection{\texorpdfstring{readFile()}{readFile()}}
+{\footnotesize\ttfamily void Wav\+::read\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Name }\end{DoxyParamCaption})}
+
+Reads in wav file 
+\begin{DoxyParams}{Parameters}
+{\em filename} & -\/ constant audio file name, in a string \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_wav_ae2f7e1aad6da27cf88fd590caa66180f}\label{class_wav_ae2f7e1aad6da27cf88fd590caa66180f}} 
+\index{Wav@{Wav}!setBitDepth@{setBitDepth}}
+\index{setBitDepth@{setBitDepth}!Wav@{Wav}}
+\doxysubsubsection{\texorpdfstring{setBitDepth()}{setBitDepth()}}
+{\footnotesize\ttfamily void Wav\+::set\+Bit\+Depth (\begin{DoxyParamCaption}\item[{short}]{new\+Bit\+Depth }\end{DoxyParamCaption})}
+
+Setter for a wav file\textquotesingle{}s bit depth, or bit capacity 
+\begin{DoxyParams}{Parameters}
+{\em new\+Bit\+Depth} & -\/ a new file\textquotesingle{}s bit size, in short integers \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_wav_a33c4bc3842f6de27776aebb96f3d256c}\label{class_wav_a33c4bc3842f6de27776aebb96f3d256c}} 
+\index{Wav@{Wav}!setFmtHeader@{setFmtHeader}}
+\index{setFmtHeader@{setFmtHeader}!Wav@{Wav}}
+\doxysubsubsection{\texorpdfstring{setFmtHeader()}{setFmtHeader()}}
+{\footnotesize\ttfamily void Wav\+::set\+Fmt\+Header (\begin{DoxyParamCaption}\item[{char $\ast$}]{new\+Fmt\+Header }\end{DoxyParamCaption})}
+
+Setter for format header from wav files \mbox{\Hypertarget{class_wav_aadde6f99b7bee1648a9b816fa1a36baa}\label{class_wav_aadde6f99b7bee1648a9b816fa1a36baa}} 
+\index{Wav@{Wav}!setNumChannels@{setNumChannels}}
+\index{setNumChannels@{setNumChannels}!Wav@{Wav}}
+\doxysubsubsection{\texorpdfstring{setNumChannels()}{setNumChannels()}}
+{\footnotesize\ttfamily void Wav\+::set\+Num\+Channels (\begin{DoxyParamCaption}\item[{short}]{new\+Num\+Channels }\end{DoxyParamCaption})}
+
+Setter for number of channels in wav files \mbox{\Hypertarget{class_wav_aa1bf61e16196a60aadb4310949f65cd7}\label{class_wav_aa1bf61e16196a60aadb4310949f65cd7}} 
+\index{Wav@{Wav}!setSampleRate@{setSampleRate}}
+\index{setSampleRate@{setSampleRate}!Wav@{Wav}}
+\doxysubsubsection{\texorpdfstring{setSampleRate()}{setSampleRate()}}
+{\footnotesize\ttfamily void Wav\+::set\+Sample\+Rate (\begin{DoxyParamCaption}\item[{int}]{new\+Sample\+Rate }\end{DoxyParamCaption})}
+
+Setter for sample rate of wav files \mbox{\Hypertarget{class_wav_ad86f4a21d36719ae375ea2586f9f591f}\label{class_wav_ad86f4a21d36719ae375ea2586f9f591f}} 
+\index{Wav@{Wav}!writeFile@{writeFile}}
+\index{writeFile@{writeFile}!Wav@{Wav}}
+\doxysubsubsection{\texorpdfstring{writeFile()}{writeFile()}}
+{\footnotesize\ttfamily void Wav\+::write\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{out\+File\+Name }\end{DoxyParamCaption})}
+
+Writes manipulation done by processors to output wav file 
+\begin{DoxyParams}{Parameters}
+{\em out\+File\+Name} & -\/ constant output audio file containing overwritten audio, in a string \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+wav.\+h\item 
+wav.\+cpp\end{DoxyCompactItemize}

@@ -34,6 +34,10 @@
 
 // }
 
+		/**
+		* Main application entry point.
+		*/
+
 int main() 
 {	
         //UNCOMMENT THESE WHEN READY
