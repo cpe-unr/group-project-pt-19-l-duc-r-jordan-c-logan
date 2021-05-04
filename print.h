@@ -17,6 +17,9 @@
 
 class Print{
 	const std::string testfile = "yes-8-bit-stereo.wav";
+	const std::string file2 = "yes-8bit-mono.wav";
+	const std::string file3 = "yes-16-bit-mono.wav";
+	const std::string file4 = "yes-26-bit-stereo.wav";
 	const std::string normalizedfile = "yes-8bit-mono-normalized.wav";
 	const std::string echofile = "yes-8bit-mono-echo.wav";
 	const std::string gateFile = "yes-8-bit-stereo-gated.wav";
@@ -38,6 +41,9 @@ public:
 	 * info and metadata of all the files filtered through and if so, calls the function to do so
 	 */
  	void csvFilePrinter();
+
+	std::string getFile() const;
+	std::string getFileTwo() const;
 };
 
 #endif

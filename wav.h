@@ -73,7 +73,7 @@ class Wav {
         short *getShortBuffer();
 
 	/**
-	 * Getter for the number of channels in wav files
+	 * Getters for the multiple attributes in wav files
 	 */
 	short getNumChannels();
 	void setNumChannels(short newNumChannels);

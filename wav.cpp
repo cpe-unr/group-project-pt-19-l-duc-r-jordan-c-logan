@@ -20,6 +20,9 @@ void Wav::readFile(const std::string &fileName) {
     if(file.is_open()){
         file.read((char*)&waveHeader, sizeof(wav_header));
         setBitDepth(waveHeader.bit_depth);
+	setNumChannels(waveHeader.num_channels);
+	setFmtHeader(waveHeader.fmt_header);
+	setSampleRate(waveHeader.sample_rate);
 
         if (bitDepth == 8)
         {
@@ -51,6 +54,9 @@ void Wav::writeFile(const std::string &outFileName) {
     std::ofstream outFile(outFileName, std::ios::out | std::ios::binary);
     outFile.write((char*)&waveHeader,sizeof(wav_header));
     setBitDepth(waveHeader.bit_depth);
+    setNumChannels(waveHeader.num_channels);
+    setFmtHeader(waveHeader.fmt_header);
+    setSampleRate(waveHeader.sample_rate);
 
     if (bitDepth == 8)
     {

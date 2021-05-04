@@ -113,4 +113,10 @@ void Print::csvFilePrinter(){
 	}
 }
 
+std::string Print::getFile() const{
+	return testfile;
+}
 
+std::string Print::getFileTwo() const{
+	return file2;
+}
