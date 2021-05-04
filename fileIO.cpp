@@ -17,24 +17,42 @@ void FileIO::writeCsvFile(std::string file, int bufferSize){
 	w2.readFile(p1.getFileTwo());
 	w3.readFile(p1.getFileThree());
 	w4.readFile(p1.getFileFour());
-	meta_header m;
 
 	std::ofstream dataFile(file);
 	
-	//Columns showing what data layout is
-	dataFile << "Filename, Format Header, Num Channels, Sample Rate, Bit Size, MetaData " << std::endl;
+	dataFile << "Filename, Format Header, Num Channels, Sample Rate, Bit Size";
 
-	dataFile << p1.getFile() << ", " << w.getFmtHeader() << ", " << w.getNumChannels() << ", " << w.getSampleRate() << "," << w.getBitDepth() << ", " << m.info << std::endl;
+	for (std::string x : w.getSubChunk()){
+	    dataFile << ", " << x;
+	}
+	dataFile << "\n";
+
+	dataFile << p1.getFile() << ", " << w.getFmtHeader() << ", " << w.getNumChannels() << ", " << w.getSampleRate() << "," << w.getBitDepth();
+
+	for (std::string s : w.getActualData()){
+	   dataFile << ", " << s;
+	}
+	dataFile << "\n";
 	
-	dataFile << p1.getFileTwo() << ", " << w2.getFmtHeader() << ", " << w2.getNumChannels() << ", " << w2.getSampleRate() << "," << w2.getBitDepth() << ", " << m.info << std::endl;
+	dataFile << p1.getFileTwo() << ", " << w2.getFmtHeader() << ", " << w2.getNumChannels() << ", " << w2.getSampleRate() << "," << w2.getBitDepth();
 
-	dataFile << p1.getFileThree() << ", " << w3.getFmtHeader() << ", " << w3.getNumChannels() << ", " << w3.getSampleRate() << "," << w3.getBitDepth() << ", " << m.info << std::endl;
+	for (std::string s : w2.getActualData()){
+	   dataFile << ", " << s;
+	}
+	dataFile << "\n";
+
+	dataFile << p1.getFileThree() << ", " << w3.getFmtHeader() << ", " << w3.getNumChannels() << ", " << w3.getSampleRate() << "," << w3.getBitDepth();
+
+	for (std::string s : w3.getActualData()){
+	   dataFile << ", " << s;
+	}
+	dataFile << "\n";
 
 	dataFile << p1.getFileFour() << ", " << w4.getFmtHeader() << ", " << w4.getNumChannels() << ", " << w4.getSampleRate() << "," << w4.getBitDepth();
 
-	for (std::string x : w4.getSubChunk())
-	{
-	    dataFile << x << std::endl;
+
+	for (std::string s : w4.getActualData()){
+	   dataFile << ", " << s;
 	}
 
 	dataFile.close();
