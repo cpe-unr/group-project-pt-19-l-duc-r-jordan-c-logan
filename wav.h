@@ -43,6 +43,9 @@ class Wav {
         wav_header waveHeader;
         short bitDepth;
         short* shortBuffer;
+	short numChannels;
+	char* fmtHeader;
+	int sampleRate;
 
     public:
 
@@ -73,7 +76,11 @@ class Wav {
 	 * Getter for the number of channels in wav files
 	 */
 	short getNumChannels();
-
+	void setNumChannels(short newNumChannels);
+	char* getFmtHeader();
+	void setFmtHeader(char* newFmtHeader);
+	int getSampleRate();
+	void setSampleRate(int newSampleRate);
 };
 
 

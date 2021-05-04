@@ -78,6 +78,26 @@ int Wav::getBufferSize(){
 }
 
 short Wav::getNumChannels(){
-	return waveHeader.num_channels;
+	return numChannels;
+}
+
+void Wav::setNumChannels(short newNumChannels){
+	numChannels = newNumChannels;
+}
+
+char* Wav::getFmtHeader(){
+	return fmtHeader;
+}
+
+void Wav::setFmtHeader(char* newFmtHeader){
+	fmtHeader = newFmtHeader;
+}
+
+int Wav::getSampleRate(){
+	return sampleRate;
+}
+
+void Wav::setSampleRate(int newSampleRate){
+	sampleRate = newSampleRate;
 }
 

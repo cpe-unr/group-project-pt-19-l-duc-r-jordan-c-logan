@@ -105,6 +105,7 @@ void Print::csvFilePrinter(){
 		std::cout << "Enter a filename for the CSV file (Ex. filname.csv): ";
 		std::cin >> filename;
  		Wav wav;
+		wav.readFile(testfile);
 
 		FileIO* csv = new FileIO();
 		csv->writeCsvFile(filename, wav.getBufferSize());

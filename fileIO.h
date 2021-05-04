@@ -4,8 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include "wav.h"
-#include "print.h"
+
 
 /**
  * This is the FileIO class.
@@ -17,7 +16,6 @@ public:
 	 * FileIO constructor
 	 */
 	FileIO();
-	//void loadFile(std::string file);
 
 	/**
 	 * Writes the CSV file containing all the tech. info and metadata of the wav files

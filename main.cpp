@@ -47,7 +47,8 @@ int main()
         	p.csvFilePrinter();
 
 		std::cout << "Exit the program? 1:yes 0:no ";
-		std::cin >> exit;	
+		std::cin >> exit;
+	
 	}while(exit == 0);
         
 	return 0;
