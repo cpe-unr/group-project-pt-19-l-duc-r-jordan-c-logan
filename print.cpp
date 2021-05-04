@@ -86,6 +86,8 @@ void Print::processingPrinter(){
                 		wav.readFile(testfile);
                 		Processor<short> *processorEcho = new Echo<short>(100000);
                			processorEcho->processBuffer(wav.getShortBuffer(), wav.getBufferSize(), wav.getBitDepth(), wav.getNumChannels());
+               			processorEcho->processBuffer(wav.getShortBuffer(), wav.getBufferSize(), wav.getBitDepth(), wav.getNumChannels());
+
                			wav.writeFile(echofile);
         		}			
  		}
@@ -109,4 +111,6 @@ void Print::csvFilePrinter(){
 		delete csv;
 	}
 }
+
+
 
