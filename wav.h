@@ -41,12 +41,12 @@ class Wav {
         //void setBitDepth(short b);
 
     private:
-        unsigned char* buffer;
+        unsigned char* buffer = NULL;
         wav_header waveHeader;
 	meta_header metaHeader;
         
 	short bitDepth;
-        short* shortBuffer;
+        short* shortBuffer = NULL;
 	short numChannels;
 	char* fmtHeader;
 	int sampleRate;
