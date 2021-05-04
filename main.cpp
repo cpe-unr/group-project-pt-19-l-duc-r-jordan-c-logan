@@ -38,10 +38,17 @@ int main()
 {	
         //UNCOMMENT THESE WHEN READY
 
-        Print p;
-	p.modifyPrinter();
-	p.processingPrinter();
-        p.csvFilePrinter();	
+	do{
+		int exit;
 
-        return 0;
+        	Print p;
+		p.modifyPrinter();
+		p.processingPrinter();
+        	p.csvFilePrinter();
+
+		std::cout << "Exit the program? 1:yes 0:no ";
+		std::cin >> exit;	
+	}while(exit == 0);
+        
+	return 0;
 }
