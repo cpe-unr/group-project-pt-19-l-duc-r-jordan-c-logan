@@ -89,66 +89,66 @@ $(function() {
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="comment">//void setBitDepth(short b);</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* buffer;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* buffer = NULL;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <a class="code" href="../../dc/dd5/structwav__header.html">wav_header</a> waveHeader;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="../../df/d16/structmeta__header.html">meta_header</a> metaHeader;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        </div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">short</span> bitDepth;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordtype">short</span>* shortBuffer;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordtype">short</span>* shortBuffer = NULL;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">short</span> numChannels;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">char</span>* fmtHeader;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">int</span> sampleRate;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    </div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    std::vector&lt;std::string&gt; subChunk; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        std::vector&lt;std::string&gt; actualData;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    std::vector&lt;int&gt; numChar;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        std::vector&lt;std::string&gt; actualData;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="../../db/d5d/class_wav.html#a1510b246ba121b103a60b8e7839af25f">~Wav</a>();</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="comment">//short* shortBuffer = NULL;</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *<a class="code" href="../../db/d5d/class_wav.html#a2daf07a90ed34789e3a1874973d9bd36">getBuffer</a>();</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="../../db/d5d/class_wav.html#a11de10cb698ea0ea08f3a28580f21b39">getBufferSize</a>();</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordtype">short</span> *<a class="code" href="../../db/d5d/class_wav.html#aa5534bd29df6ef1be9ed856d300fd754">getShortBuffer</a>();</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">short</span> <a class="code" href="../../db/d5d/class_wav.html#a5450e63d090ea1d41aced0ccf4c60f36">getNumChannels</a>();</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../db/d5d/class_wav.html#aadde6f99b7bee1648a9b816fa1a36baa">setNumChannels</a>(<span class="keywordtype">short</span> newNumChannels);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">char</span>* <a class="code" href="../../db/d5d/class_wav.html#a69745d86db6b60cb7a2504002bec406a">getFmtHeader</a>();</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../db/d5d/class_wav.html#a33c4bc3842f6de27776aebb96f3d256c">setFmtHeader</a>(<span class="keywordtype">char</span>* newFmtHeader);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../db/d5d/class_wav.html#ac6005a86d05843683afc584be759b600">getSampleRate</a>();</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../db/d5d/class_wav.html#aa1bf61e16196a60aadb4310949f65cd7">setSampleRate</a>(<span class="keywordtype">int</span> newSampleRate);</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    std::vector&lt;std::string&gt; <a class="code" href="../../db/d5d/class_wav.html#a86ff90279390140f2fe68cf92f8e4b65">getSubChunk</a>();</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        std::vector&lt;std::string&gt; <a class="code" href="../../db/d5d/class_wav.html#ad6b1d51b060e996cbce7d11f2c637aa1">getActualData</a>();</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;};</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="../../db/d5d/class_wav.html#a1510b246ba121b103a60b8e7839af25f">~Wav</a>();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="comment">//short* shortBuffer = NULL;</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *<a class="code" href="../../db/d5d/class_wav.html#a2daf07a90ed34789e3a1874973d9bd36">getBuffer</a>();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="../../db/d5d/class_wav.html#a11de10cb698ea0ea08f3a28580f21b39">getBufferSize</a>();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordtype">short</span> *<a class="code" href="../../db/d5d/class_wav.html#aa5534bd29df6ef1be9ed856d300fd754">getShortBuffer</a>();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">short</span> <a class="code" href="../../db/d5d/class_wav.html#a5450e63d090ea1d41aced0ccf4c60f36">getNumChannels</a>();</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../db/d5d/class_wav.html#aadde6f99b7bee1648a9b816fa1a36baa">setNumChannels</a>(<span class="keywordtype">short</span> newNumChannels);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordtype">char</span>* <a class="code" href="../../db/d5d/class_wav.html#a69745d86db6b60cb7a2504002bec406a">getFmtHeader</a>();</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../db/d5d/class_wav.html#a33c4bc3842f6de27776aebb96f3d256c">setFmtHeader</a>(<span class="keywordtype">char</span>* newFmtHeader);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../db/d5d/class_wav.html#ac6005a86d05843683afc584be759b600">getSampleRate</a>();</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../db/d5d/class_wav.html#aa1bf61e16196a60aadb4310949f65cd7">setSampleRate</a>(<span class="keywordtype">int</span> newSampleRate);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    std::vector&lt;std::string&gt; <a class="code" href="../../db/d5d/class_wav.html#a86ff90279390140f2fe68cf92f8e4b65">getSubChunk</a>();</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        std::vector&lt;std::string&gt; <a class="code" href="../../db/d5d/class_wav.html#ad6b1d51b060e996cbce7d11f2c637aa1">getActualData</a>();</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;};</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//WAV_H</span></div>
 <div class="ttc" id="aclass_wav_html"><div class="ttname"><a href="../../db/d5d/class_wav.html">Wav</a></div><div class="ttdef"><b>Definition:</b> wav.h:15</div></div>
-<div class="ttc" id="aclass_wav_html_a11de10cb698ea0ea08f3a28580f21b39"><div class="ttname"><a href="../../db/d5d/class_wav.html#a11de10cb698ea0ea08f3a28580f21b39">Wav::getBufferSize</a></div><div class="ttdeci">int getBufferSize()</div><div class="ttdef"><b>Definition:</b> wav.cpp:117</div></div>
-<div class="ttc" id="aclass_wav_html_a1510b246ba121b103a60b8e7839af25f"><div class="ttname"><a href="../../db/d5d/class_wav.html#a1510b246ba121b103a60b8e7839af25f">Wav::~Wav</a></div><div class="ttdeci">virtual ~Wav()</div><div class="ttdef"><b>Definition:</b> wav.cpp:111</div></div>
+<div class="ttc" id="aclass_wav_html_a11de10cb698ea0ea08f3a28580f21b39"><div class="ttname"><a href="../../db/d5d/class_wav.html#a11de10cb698ea0ea08f3a28580f21b39">Wav::getBufferSize</a></div><div class="ttdeci">int getBufferSize()</div><div class="ttdef"><b>Definition:</b> wav.cpp:129</div></div>
+<div class="ttc" id="aclass_wav_html_a1510b246ba121b103a60b8e7839af25f"><div class="ttname"><a href="../../db/d5d/class_wav.html#a1510b246ba121b103a60b8e7839af25f">Wav::~Wav</a></div><div class="ttdeci">virtual ~Wav()</div><div class="ttdef"><b>Definition:</b> wav.cpp:123</div></div>
 <div class="ttc" id="aclass_wav_html_a1c4230cec49d30147a5b8a1950083f7c"><div class="ttname"><a href="../../db/d5d/class_wav.html#a1c4230cec49d30147a5b8a1950083f7c">Wav::readFile</a></div><div class="ttdeci">void readFile(const std::string &amp;fileName)</div><div class="ttdef"><b>Definition:</b> wav.cpp:17</div></div>
 <div class="ttc" id="aclass_wav_html_a2daf07a90ed34789e3a1874973d9bd36"><div class="ttname"><a href="../../db/d5d/class_wav.html#a2daf07a90ed34789e3a1874973d9bd36">Wav::getBuffer</a></div><div class="ttdeci">unsigned char * getBuffer()</div><div class="ttdef"><b>Definition:</b> wav.cpp:69</div></div>
-<div class="ttc" id="aclass_wav_html_a33c4bc3842f6de27776aebb96f3d256c"><div class="ttname"><a href="../../db/d5d/class_wav.html#a33c4bc3842f6de27776aebb96f3d256c">Wav::setFmtHeader</a></div><div class="ttdeci">void setFmtHeader(char *newFmtHeader)</div><div class="ttdef"><b>Definition:</b> wav.cpp:133</div></div>
-<div class="ttc" id="aclass_wav_html_a5450e63d090ea1d41aced0ccf4c60f36"><div class="ttname"><a href="../../db/d5d/class_wav.html#a5450e63d090ea1d41aced0ccf4c60f36">Wav::getNumChannels</a></div><div class="ttdeci">short getNumChannels()</div><div class="ttdef"><b>Definition:</b> wav.cpp:121</div></div>
-<div class="ttc" id="aclass_wav_html_a69745d86db6b60cb7a2504002bec406a"><div class="ttname"><a href="../../db/d5d/class_wav.html#a69745d86db6b60cb7a2504002bec406a">Wav::getFmtHeader</a></div><div class="ttdeci">char * getFmtHeader()</div><div class="ttdef"><b>Definition:</b> wav.cpp:129</div></div>
+<div class="ttc" id="aclass_wav_html_a33c4bc3842f6de27776aebb96f3d256c"><div class="ttname"><a href="../../db/d5d/class_wav.html#a33c4bc3842f6de27776aebb96f3d256c">Wav::setFmtHeader</a></div><div class="ttdeci">void setFmtHeader(char *newFmtHeader)</div><div class="ttdef"><b>Definition:</b> wav.cpp:145</div></div>
+<div class="ttc" id="aclass_wav_html_a5450e63d090ea1d41aced0ccf4c60f36"><div class="ttname"><a href="../../db/d5d/class_wav.html#a5450e63d090ea1d41aced0ccf4c60f36">Wav::getNumChannels</a></div><div class="ttdeci">short getNumChannels()</div><div class="ttdef"><b>Definition:</b> wav.cpp:133</div></div>
+<div class="ttc" id="aclass_wav_html_a69745d86db6b60cb7a2504002bec406a"><div class="ttname"><a href="../../db/d5d/class_wav.html#a69745d86db6b60cb7a2504002bec406a">Wav::getFmtHeader</a></div><div class="ttdeci">char * getFmtHeader()</div><div class="ttdef"><b>Definition:</b> wav.cpp:141</div></div>
 <div class="ttc" id="aclass_wav_html_a7620ba9a7653b718ac96f11ff4e453f3"><div class="ttname"><a href="../../db/d5d/class_wav.html#a7620ba9a7653b718ac96f11ff4e453f3">Wav::getBitDepth</a></div><div class="ttdeci">short getBitDepth()</div><div class="ttdef"><b>Definition:</b> wav.cpp:7</div></div>
 <div class="ttc" id="aclass_wav_html_a86ff90279390140f2fe68cf92f8e4b65"><div class="ttname"><a href="../../db/d5d/class_wav.html#a86ff90279390140f2fe68cf92f8e4b65">Wav::getSubChunk</a></div><div class="ttdeci">std::vector&lt; std::string &gt; getSubChunk()</div><div class="ttdef"><b>Definition:</b> wav.cpp:78</div></div>
-<div class="ttc" id="aclass_wav_html_aa1bf61e16196a60aadb4310949f65cd7"><div class="ttname"><a href="../../db/d5d/class_wav.html#aa1bf61e16196a60aadb4310949f65cd7">Wav::setSampleRate</a></div><div class="ttdeci">void setSampleRate(int newSampleRate)</div><div class="ttdef"><b>Definition:</b> wav.cpp:141</div></div>
+<div class="ttc" id="aclass_wav_html_aa1bf61e16196a60aadb4310949f65cd7"><div class="ttname"><a href="../../db/d5d/class_wav.html#aa1bf61e16196a60aadb4310949f65cd7">Wav::setSampleRate</a></div><div class="ttdeci">void setSampleRate(int newSampleRate)</div><div class="ttdef"><b>Definition:</b> wav.cpp:153</div></div>
 <div class="ttc" id="aclass_wav_html_aa5534bd29df6ef1be9ed856d300fd754"><div class="ttname"><a href="../../db/d5d/class_wav.html#aa5534bd29df6ef1be9ed856d300fd754">Wav::getShortBuffer</a></div><div class="ttdeci">short * getShortBuffer()</div><div class="ttdef"><b>Definition:</b> wav.cpp:73</div></div>
-<div class="ttc" id="aclass_wav_html_aadde6f99b7bee1648a9b816fa1a36baa"><div class="ttname"><a href="../../db/d5d/class_wav.html#aadde6f99b7bee1648a9b816fa1a36baa">Wav::setNumChannels</a></div><div class="ttdeci">void setNumChannels(short newNumChannels)</div><div class="ttdef"><b>Definition:</b> wav.cpp:125</div></div>
-<div class="ttc" id="aclass_wav_html_ac6005a86d05843683afc584be759b600"><div class="ttname"><a href="../../db/d5d/class_wav.html#ac6005a86d05843683afc584be759b600">Wav::getSampleRate</a></div><div class="ttdeci">int getSampleRate()</div><div class="ttdef"><b>Definition:</b> wav.cpp:137</div></div>
+<div class="ttc" id="aclass_wav_html_aadde6f99b7bee1648a9b816fa1a36baa"><div class="ttname"><a href="../../db/d5d/class_wav.html#aadde6f99b7bee1648a9b816fa1a36baa">Wav::setNumChannels</a></div><div class="ttdeci">void setNumChannels(short newNumChannels)</div><div class="ttdef"><b>Definition:</b> wav.cpp:137</div></div>
+<div class="ttc" id="aclass_wav_html_ac6005a86d05843683afc584be759b600"><div class="ttname"><a href="../../db/d5d/class_wav.html#ac6005a86d05843683afc584be759b600">Wav::getSampleRate</a></div><div class="ttdeci">int getSampleRate()</div><div class="ttdef"><b>Definition:</b> wav.cpp:149</div></div>
 <div class="ttc" id="aclass_wav_html_ad6b1d51b060e996cbce7d11f2c637aa1"><div class="ttname"><a href="../../db/d5d/class_wav.html#ad6b1d51b060e996cbce7d11f2c637aa1">Wav::getActualData</a></div><div class="ttdeci">std::vector&lt; std::string &gt; getActualData()</div><div class="ttdef"><b>Definition:</b> wav.cpp:83</div></div>
 <div class="ttc" id="aclass_wav_html_ad86f4a21d36719ae375ea2586f9f591f"><div class="ttname"><a href="../../db/d5d/class_wav.html#ad86f4a21d36719ae375ea2586f9f591f">Wav::writeFile</a></div><div class="ttdeci">void writeFile(const std::string &amp;outFileName)</div><div class="ttdef"><b>Definition:</b> wav.cpp:88</div></div>
 <div class="ttc" id="aclass_wav_html_ae2f7e1aad6da27cf88fd590caa66180f"><div class="ttname"><a href="../../db/d5d/class_wav.html#ae2f7e1aad6da27cf88fd590caa66180f">Wav::setBitDepth</a></div><div class="ttdeci">void setBitDepth(short newBitDepth)</div><div class="ttdef"><b>Definition:</b> wav.cpp:12</div></div>
