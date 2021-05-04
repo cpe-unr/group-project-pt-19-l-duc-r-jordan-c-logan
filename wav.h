@@ -41,11 +41,17 @@ class Wav {
     private:
         unsigned char* buffer;
         wav_header waveHeader;
-        short bitDepth;
+	meta_header metaHeader;
+        
+	short bitDepth;
         short* shortBuffer;
 	short numChannels;
 	char* fmtHeader;
 	int sampleRate;
+	
+	std::vector<std::string> subChunk; 
+        std::vector<std::string> actualData;
+
 
     public:
 
@@ -81,6 +87,8 @@ class Wav {
 	void setFmtHeader(char* newFmtHeader);
 	int getSampleRate();
 	void setSampleRate(int newSampleRate);
+	std::vector<std::string> getSubChunk();
+        std::vector<std::string> getActualData();
 };
 
 
