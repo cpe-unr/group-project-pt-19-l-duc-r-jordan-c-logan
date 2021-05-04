@@ -12,6 +12,42 @@ void Print::modifyPrinter(){
 	if(input1 == 1){    
  		std::cout << "What file? " << std::endl;
  		std::cin >> file;
+		
+		std::cin >> file;
+
+    Wav wav;
+    wav.readFile(file);
+    wav.getSubChunk();
+    wav.getActualData();
+
+    std::cout << "What would metadata would you like to change? (Example: INAM)" << std::endl;
+    std::cin >> metaChoice;
+
+    int index = -1;
+    for (int i = 0; i < wav.getSubChunk().size(); i++) {
+     if (wav.getSubChunk()[i] == metaChoice) {
+        index = i;
+        break;
+     }
+    }
+
+    if (index == -1)
+    {
+      std::cout << "Could not find the metadata!" << std::endl;
+    }
+
+    else 
+    {
+      std::cout << "The current metadata for that file is " << wav.getActualData()[index] << std::endl;
+
+      std::cout << "What would you like to change it to?"; 
+      std::cin >> newMeta; 
+
+      wav.getActualData()[index] = newMeta; 
+    }
+
+ 		//change metadata//
+ 		//save new metadata file//
  		//change metadata
  		//save new metadata file
  	}
