@@ -10,11 +10,21 @@ class Echo : public Processor<T>
 {
 	public:
 
-                int delay; 
-                Echo(int newDelay): delay(newDelay){}
+        int delay; 
+	
+	/**
+	 * Constructor for Echo class that sets the value for the echo delay given
+	 * @param newDelay - delay scale for echoeing, in integers
+	 */        
+	Echo(int newDelay): delay(newDelay){}
 
-
-
+	/**
+	 * Overrides abstract class/interface processBuffer to manipulate the wav buffer by echoing the audio
+	 * @param buffer - buffer array from the audio read in, in template data type T
+	 * @param bufferSize - size of buffer from wav files, in integers
+	 * @param bitdepth - bit size/length from read in wav files, in short integers
+	 * @param numchannels - number of channels in the read in wav files to determine mono or stereo, int short integers
+	 */
 	void processBuffer(T* buffer, int bufferSize, short bitdepth, short numchannels)
         {       
                 static const T MID = (pow(2, bitdepth)/2);

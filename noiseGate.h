@@ -11,8 +11,20 @@ class NoiseGate : public Processor<T>
 
 	public:
 		int gateLimitPercent; 
+
+	/**
+	 * Constructor for NoiseGate class the sets the scale the the amplitude will be scaled by
+	 * @param newPercent - scaling factor, in integers
+	 */
 		NoiseGate(int newPercent): gateLimitPercent(newPercent){}
         
+	/**
+	 * Overrides abstract class/interface processBuffer to manipulate the wav buffer by deleting any sound within a threshold
+	 * @param buffer - buffer array from the audio read in, in template data type T
+	 * @param bufferSize - size of buffer from wav files, in integers
+	 * @param bitdepth - bit size/length from read in wav files, in short integers
+	 * @param numchannels - number of channels in the read in wav files to determine mono or stereo, int short integers
+	 */
 		void processBuffer(T* buffer, int bufferSize, short bitdepth, short numchannels)
 		{
 			int upperThreshold, lowerThreshold; 

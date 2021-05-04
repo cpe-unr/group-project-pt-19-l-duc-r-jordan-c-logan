@@ -18,6 +18,13 @@ class Normalization : public Processor<T>
 		//Normalization(int newMaxBuffer, float newMultiplier);
 		//Normalization(){}
 
+	/**
+	 * Overrides abstract class/interface processBuffer to manipulate the wav buffer by amplifying the audio by a caluculated distance
+	 * @param buffer - buffer array from the audio read in, in template data type T
+	 * @param bufferSize - size of buffer from wav files, in integers
+	 * @param bitdepth - bit size/length from read in wav files, in short integers
+	 * @param numchannels - number of channels in the read in wav files to determine mono or stereo, int short integers
+	 */
 		void processBuffer(T* buffer, int bufferSize, short bitdepth, short numchannels)
 		{
 

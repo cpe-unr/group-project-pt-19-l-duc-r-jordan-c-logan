@@ -69,6 +69,11 @@ class Wav {
 	 */
         short *getShortBuffer();
 
+	/**
+	 * Getter for the number of channels in wav files
+	 */
+	short getNumChannels();
+
 };
 
 

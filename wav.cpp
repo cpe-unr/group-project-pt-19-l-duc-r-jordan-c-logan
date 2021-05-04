@@ -77,7 +77,7 @@ int Wav::getBufferSize(){
     return waveHeader.data_bytes;
 }
 
-
-
-
+short Wav::getNumChannels(){
+	return waveHeader.num_channels;
+}
 

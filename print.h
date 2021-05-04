@@ -16,10 +16,10 @@
  */
 
 class Print{
-	const std::string testfile = "yes-8bit-mono.wav";
+	const std::string testfile = "yes-8-bit-stereo.wav";
 	const std::string normalizedfile = "yes-8bit-mono-normalized.wav";
 	const std::string echofile = "yes-8bit-mono-echo.wav";
-	const std::string gateFile = "yes-8bit-mono-gated.wav";
+	const std::string gateFile = "yes-8-bit-stereo-gated.wav";
 	
 public:
 
