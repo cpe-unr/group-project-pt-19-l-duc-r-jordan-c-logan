@@ -81,15 +81,43 @@ class Wav {
         short *getShortBuffer();
 
 	/**
-	 * Getters for the multiple attributes in wav files
+	 * Getter for number of Channels in wav files
 	 */
 	short getNumChannels();
+
+	/**
+	 * Setter for number of channels in wav files
+	 */
 	void setNumChannels(short newNumChannels);
+
+	/**
+	 * Getter for format header from wav files
+	 */
 	char* getFmtHeader();
+
+	/**
+	 * Setter for format header from wav files
+	 */
 	void setFmtHeader(char* newFmtHeader);
+
+	/**
+	 * Getter for sample rate of wav files 
+	 */
 	int getSampleRate();
+
+	/**
+	 * Setter for sample rate of wav files
+	 */
 	void setSampleRate(int newSampleRate);
+
+	/**
+	 * Getter for metadata subchunk
+	 */
 	std::vector<std::string> getSubChunk();
+
+	/**
+	 * Getter for actual metadata (i.e. Title, artist)
+	 */
         std::vector<std::string> getActualData();
 };
 
