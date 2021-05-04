@@ -5,7 +5,6 @@
 #include <fstream>
 #include <string>
 
-
 /**
  * This is the FileIO class.
  */

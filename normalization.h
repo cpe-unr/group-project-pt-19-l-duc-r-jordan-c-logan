@@ -16,7 +16,6 @@ class Normalization : public Processor<T>
 	
 	//int maxBuffer = 0;
 	//float multiplier;
-
 	
 	public:
 		//Normalization(int newMaxBuffer, float newMultiplier);
@@ -98,8 +97,6 @@ class Normalization : public Processor<T>
 			}
 			
 		}
-	
-
 };
 
 #endif //NORMALIZATION_H

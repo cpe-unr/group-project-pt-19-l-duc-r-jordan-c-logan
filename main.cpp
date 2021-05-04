@@ -40,8 +40,6 @@
 
 int main() 
 {	
-        //UNCOMMENT THESE WHEN READY
-
 	do{
 		int exit;
 
@@ -57,35 +55,4 @@ int main()
         
 	return 0;
 	
-	//Example of how to access metadata
-	  //Wav wav; //Create object
-	  //std::string testFile;
-	  //testFile = "yes-8-bit-mono.wav";
-
-	  //wav.readFile(testFile); //Read in file based on User input
-
-		
-	  //Iterate through all elements inside the vector with this for each loop
-	  //for (std::string x : wav.getSubChunk())
-	  //{
-	    //std::cout << x << std::endl;
-	  //}
-	  
-	  //Iterate through all elements inside the actual data
-	  //for (std::string s : wav.getActualData())
-	  //{
-
-	    //std::cout << s << std::endl;
-
-	  //}
-	
-	  //So the output should be like ths: 
-	  //INAM: Owner of a lonely heart
-	  //IART: YES
-	
-	  //But the output is like this: 
-	  //INAM
-	  //IART
-	  //Owner of a lonely heart
-	  //YES
 }

@@ -79,8 +79,6 @@ class NoiseGate : public Processor<T>
 					}
 				}
 			}
-
-
 		}
 
 };
