@@ -20,7 +20,7 @@ public:
 	 * @param bufferSize - size of wav files buffer, in integers
 	 * @param bitdepth - bit size of wav file, in short integers
 	 */ 
-    virtual void processBuffer(T* buffer, int bufferSize, short bitdepth) = 0;
+    virtual void processBuffer(T* buffer, int bufferSize, short bitdepth, short numchannels) = 0;
 
 };
 
