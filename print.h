@@ -44,6 +44,8 @@ public:
 
 	std::string getFile() const;
 	std::string getFileTwo() const;
+	std::string getFileThree() const;
+	std::string getFileFour() const;
 };
 
 #endif

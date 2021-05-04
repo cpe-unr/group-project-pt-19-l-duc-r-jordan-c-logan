@@ -120,3 +120,12 @@ std::string Print::getFile() const{
 std::string Print::getFileTwo() const{
 	return file2;
 }
+
+std::string Print::getFileThree() const{
+	return file3;
+}
+
+std::string Print::getFileFour() const{
+	return file4;
+}
+
