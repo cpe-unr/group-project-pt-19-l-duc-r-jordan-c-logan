@@ -42,6 +42,9 @@ public:
 	 */
  	void csvFilePrinter();
 
+	/**
+	 * Getters for files
+	 */
 	std::string getFile() const;
 	std::string getFileTwo() const;
 	std::string getFileThree() const;

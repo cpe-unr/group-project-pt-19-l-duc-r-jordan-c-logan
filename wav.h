@@ -121,5 +121,4 @@ class Wav {
         std::vector<std::string> getActualData();
 };
 
-
 #endif //WAV_H

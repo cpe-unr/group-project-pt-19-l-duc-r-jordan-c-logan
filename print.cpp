@@ -12,8 +12,8 @@ void Print::modifyPrinter(){
 	if(input1 == 1){    
  		std::cout << "What file? " << std::endl;
  		std::cin >> file;
- 		//change metadata//
- 		//save new metadata file//
+ 		//change metadata
+ 		//save new metadata file
  	}
 }
 	
@@ -29,12 +29,8 @@ void Print::processingPrinter(){
 	std::cin >> input2;
 
 	if(input2 != 0){
- 		//std::cout << "Please enter a valid filename to store processsed audio (Ex. filename.wav): ";
-		//std::cin >> input3;
 		
 		Wav wav;
-		//TESTING LINE
-		//wav.readFile("yes-8bit-mono.wav");		
         	wav.readFile(testfile);		
 
 		if(input2 == 1){
@@ -54,7 +50,6 @@ void Print::processingPrinter(){
 
 		}
 		else if(input2 == 2){
-			std::cout << "NoiseGate Processing" << std::endl; 
 				
 			if (wav.getBitDepth() == 8)
         		{
@@ -73,7 +68,6 @@ void Print::processingPrinter(){
 
 		}
 		else{
-			std::cout << "Echo Processing" << std::endl; 
 			if (wav.getBitDepth() == 8)
 		        {
         		        wav.readFile(testfile);
