@@ -5,6 +5,8 @@
 #include <string>
 
 #include "waveHeader.h"
+#include "metaChunksHeader.h"
+#include "Metachunks.h"
 
 /**
  * This is the Wav class.

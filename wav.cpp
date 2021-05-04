@@ -3,7 +3,6 @@
 #include <iostream>
 #include "wav.h"
 
-
 //Getter
 short Wav::getBitDepth(){
     return bitDepth; 
