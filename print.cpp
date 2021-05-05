@@ -52,6 +52,68 @@ void Print::modifyPrinter(){
  		//change metadata
  		//save new metadata file
 	}
+	
+	//This was what I wanted to do instead, but I ran into a free pointer error that I just couldn't figure out
+	//Get the metadata 
+    // std::cout << "What would metadata would you like to change? (Example: INAM)" << std::endl;
+    // std::cin.ignore();
+    // std::cin.getline(metaChoice, 5);
+    // //std::cin.ignore();
+
+    // //Convert it
+    // std::copy(std::begin(metaChoice), std::end(metaChoice), std::begin(metaChoiceConverted));
+
+    // // for (std::array<char, 4> x : subChunk)
+    // // {
+    // //   for (int i =0; i < x.size() ; i++) 
+    // //   {
+    // //     std::cout<< x[i];
+    // //   }
+    // // }
+
+    // for (int i = 0; i < 5; i++)
+    // {
+    //   std::cout << metaChoiceConverted[i];
+    // }
+
+    // int index = -1;
+    // //std::cout << wav.subChunk.size() << std::endl;
+
+
+    // for (int i = 0; i < wav.subChunk.size(); i++) {
+    //   if (wav.subChunk[i] == metaChoiceConverted)
+    //   {
+    //     index = i;
+    //     break;
+    //   }
+    // }
+
+    // std::cout << "The index:" << index << std::endl;
+
+    // //std::cout << wav.subChunk[index] << std::endl;
+    // //std::cout << wav.actualData[index] << std::endl;
+
+    // if (index == -1)
+    // {
+    //   std::cout << "Could not find the metadata!" << std::endl;
+    // }
+
+    // else 
+    // {
+    //   std::cout << "The current metadata for that file is " << wav.actualData[index] << std::endl;
+
+    //   std::cout << "What would you like to change it to?"; 
+    //   std::cin.ignore();
+    //   std::getline(std::cin, newMeta, '\n'); 
+
+    //   wav.actualData[index] = newMeta; 
+    // }
+
+    // std::cout << "Free test" << std::endl;
+ 		// //change metadata//
+ 		// //save new metadata file//
+    
+    // wav.writeFile(file);
 
 }
 	
