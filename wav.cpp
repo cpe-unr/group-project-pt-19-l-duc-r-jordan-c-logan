@@ -105,16 +105,16 @@ void Wav::writeFile(const std::string &outFileName) {
     }
 	
 	//Write in the starting metadata
-    outFile.write((char*)&metaHeader, sizeof(metaHeader));
+//    outFile.write((char*)&metaHeader, sizeof(metaHeader));
 	
 	//Write in the subchunks
-    for (std::string x : subChunk)
-    {
-      int index = 0;
-      outFile.write(&subChunk[index][0], subChunk[index].size());
-      outFile.write((char *)actualData[index].size(), sizeof(int));
-      outFile.write(&actualData[index][0], actualData[index].size());
-    }
+//    for (std::string x : subChunk)
+//    {
+//      int index = 0;
+//      outFile.write(&subChunk[index][0], subChunk[index].size());
+//      outFile.write((char *)actualData[index].size(), sizeof(int));
+//      outFile.write(&actualData[index][0], actualData[index].size());
+//    }
 	
     outFile.close();
 
