@@ -54,6 +54,9 @@ class Wav {
 	std::vector<std::string> subChunk; 
 	std::vector<int> numChar;
         std::vector<std::string> actualData;
+	
+	//What I wanted for the subChunk instead
+	//std::vector<std::array<char, 4> > subChunk;
 
 
     public:
