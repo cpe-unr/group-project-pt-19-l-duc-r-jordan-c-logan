@@ -42,15 +42,9 @@ public:
 	 */
  	void csvFilePrinter();
 
-<<<<<<< HEAD
- 	/**
- 	* constant that gets first file
- 	*/
-=======
 	/**
-	 * Getters for files
+	 * Getters for first file
 	 */
->>>>>>> 3547299c76b163d5fd465a33b2e102632188467d
 	std::string getFile() const;
 	/**
 	* constant that gets second file
