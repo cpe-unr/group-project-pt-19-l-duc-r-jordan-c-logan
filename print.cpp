@@ -17,47 +17,47 @@ void Print::modifyPrinter(){
 		
 		//std::cin >> file;
 
-    Wav wav;
-    wav.readFile(file);
-    wav.getSubChunk();
-    wav.getActualData();
+		Wav wav;
+		wav.readFile(file);
+		wav.getSubChunk();
+		wav.getActualData();
 
-    std::cout << "What would metadata would you like to change? (Example: INAM)" << std::endl;
-    std::cin >> metaChoice;
+		std::cout << "What would metadata would you like to change? (Example: INAM)" << std::endl;
+   		std::cin >> metaChoice;
 
-    int index = -1;
-    for (int i = 0; i < wav.getSubChunk().size(); i++) {
-     if (wav.getSubChunk()[i] == metaChoice) {
-        index = i;
-        break;
-     }
-    }
+    		int index = -1;
+    		for (int i = 0; i < wav.getSubChunk().size(); i++) {
+    			if (wav.getSubChunk()[i] == metaChoice) {
+        			index = i;
+        			break;
+     			}	
+    		}
 
-    if (index == -1)
-    {
-      std::cout << "Could not find the metadata!" << std::endl;
-    }
-
-    else 
-    {
-      std::cout << "The current metadata for that file is " << wav.getActualData()[index] << std::endl;
-
-      std::cout << "What would you like to change it to?"; 
-      std::cin >> newMeta; 
-
-      wav.getActualData()[index] = newMeta; 
-    }
+    		if (index == -1)
+    		{
+			std::cout << "Could not find the metadata!" << std::endl;
+    		}
+    		else 
+    		{
+     			std::cout << "The current metadata for that file is " << wav.getActualData()[index] << std::endl;
+	
+      			std::cout << "What would you like to change it to?"; 
+      			std::cin >> newMeta; 
+	
+      			wav.getActualData()[index] = newMeta; 
+    		}
 
  		//change metadata//
  		//save new metadata file//
  		//change metadata
  		//save new metadata file
- 	}
+	}
+
 }
 	
 void Print::processingPrinter(){
 	int input2;
-	std::string input3;
+	//std::string input3;
 
 	std::cout << "What processing would you want done?" << std::endl;
 	std::cout << "1 - Normalization" << std::endl;
