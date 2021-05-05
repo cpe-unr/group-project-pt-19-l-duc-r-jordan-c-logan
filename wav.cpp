@@ -53,8 +53,50 @@ void Wav::readFile(const std::string &fileName) {
 
           actualData.push_back(actual);
         }
+	
+	//This is what I wanted to implement after the vector of strings did not work out
+	//I  wanted to avoid segmentation faults with writing the file back so I instead made a vector to contain char[4]
+	//And instead of file.eof, I used the calculation of a number to compare the sizes (This way I can cut of id3 from the metadata file which is useless)
+	//Metadata header reading
+        //file.read((char*)&metaHeader, sizeof(meta_header));
 
-        file.close();
+        //std::cout << metaHeader.chunkSize << std::endl; 
+        //Read in the metadata
+        //while (num < metaHeader.chunkSize)
+        //{
+          //std::array<char, 4> subChunkHeader;
+          //char subChunkHeader[4];
+          //file.read((char*)&subChunkHeader, 4);
+          //subChunk.push_back(subChunkHeader[0], subChunkHeader[1], subChunkHeader[2], subChunkHeader[3]);
+          //subChunk.push_back(subChunkHeader);
+
+          // for (std::array<char, 4> x : subChunk)
+          // {
+          //   for (int i =0; i < x.size() ; i++) 
+          //   {
+          //     std::cout<< x[i];
+          //   }
+          // }
+
+          //std::cout << std::endl;
+
+          //int subChunkSize; 
+          //file.read((char*)&subChunkSize, 4);
+          //std::cout << "The sub-chunk size: " << subChunkSize << std::endl;  
+
+
+          //char actual[subChunkSize];
+          //file.read((char*)&actual, subChunkSize);
+          //actualData.push_back(actual);
+          //std::cout << "The actual data: " << actualData[i] << std::endl; 
+          
+          //i = i+1;
+          //num = num + 8 + subChunkSize;
+
+         //std::cout << num << std::endl;
+        //}
+
+        //file.close();
 
         //Erase useless ID 3 that is for other programs
         subChunk.erase(subChunk.end()-2, subChunk.end());
