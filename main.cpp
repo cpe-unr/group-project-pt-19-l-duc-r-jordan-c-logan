@@ -40,9 +40,9 @@
 
 int main() 
 {	
-	do{
-		int exit;
+	int exit;
 
+	do{
         	Print p;
 		p.modifyPrinter();
 		p.processingPrinter();
@@ -50,7 +50,6 @@ int main()
 
 		std::cout << "Exit the program? 1:yes 0:no ";
 		std::cin >> exit;
-	
 	}while(exit == 0);
         
 	return 0;
